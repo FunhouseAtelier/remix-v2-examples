@@ -1,0 +1,7 @@
+# Standard Exclusions
+**/node_modules
+**/.env
+
+# Custom Exclusions
+**/_sundry
+.prettierrc.json
