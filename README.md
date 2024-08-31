@@ -26,7 +26,7 @@ The examples in this repo all follow a common pattern, with the following princi
 
 #### With `npx`
 
-This method will generate the project in TypeScript, install and import Tailwind CSS, initialize all configuration files with standard boilerplate code, and expose the server and client entry point files. All examples found in other sections (folders) of this repository start with this method of generating a new Remix project as a baseline.
+This method will generate the project in TypeScript, generate `app/root.tsx` and `app/routes/_index.tsx` files with boilerplate code, install and import Tailwind CSS, initialize all configuration files with boilerplate code, and expose the server and client entry point files. All examples found in other sections (folders) of this repository start with this method of generating a new Remix project as a baseline.
 
 #### With `remix-serve`
 
