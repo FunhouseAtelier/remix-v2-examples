@@ -168,11 +168,14 @@ npm run start
 ## Notes
 
 - This method will generate the project from scratch, allowing you to manually customize any aspect of the installation or configuration, but it does not rely on the default `remix-serve` to serve the project in a production environment. Instead this example shows how to manually configure your own Express server.
+
 - The steps are almost the same as those for **Installing and Running Remix v2 With `remix-serve`**, with the following exceptions:
+
   - **Installing, step 3:** the runtime dependencies are different.
   - **Installing, step 11:** this step is unique to manually configuring your own Express server.
   - **Running, Development Environment, step 1:** the terminal command to run the development app is different.
   - **Running, Production Environment, step 1:** the terminal command to run the production app is different.
+
 - The boilerplate code for `server.js` includes configuring Vite to perform hot reloads during development. If you want to run the Express server without the Vite hot reload functionality, refer to the **Quick Start: Bring Your Own Server** link below and use the boilerplate code from the first code snippet for `server.js`.
 
 ## Remix Docs References

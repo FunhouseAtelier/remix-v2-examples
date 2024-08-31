@@ -6,13 +6,13 @@ These examples were created by Funhouse Atelier to demonstrate how to implement 
 
 [https://github.com/FunhouseAtelier/remix-v2-examples](https://github.com/FunhouseAtelier/remix-v2-examples)
 
-The examples in **1. Installing and Running Remix** are based on [the official Quick Start guide](https://remix.run/docs/en/main/start/quickstart), and the examples in sections 2-4 are based on the techniques demonstrated in [the official Remix Tutorial](https://remix.run/docs/en/main/start/tutorial). Those examples are not meant to be a replacement for the Quick Start guide or Remix Tutorial, which explain in greater depth how the techniques work, especially behind the scenes, and tie them all together into one example app. The Funhouse Atelier examples mentioned above are meant to simplify the demonstration of the same techniques, for ease of atomic reference and replication.
+The examples in **01. Installing and Running Remix** are based on [the official Quick Start guide](https://remix.run/docs/en/main/start/quickstart), and the examples in sections 2-4 are based on the techniques demonstrated in [the official Remix Tutorial](https://remix.run/docs/en/main/start/tutorial). Those examples are not meant to be a replacement for the Quick Start guide or Remix Tutorial, which explain in greater depth how the techniques work, especially behind the scenes, and tie them all together into one example app. The Funhouse Atelier examples mentioned above are meant to simplify the demonstration of the same techniques, for ease of atomic reference and replication.
 
 ## Usage
 
-The examples in this repo all follow a common pattern, with the following principles in mind:
+The examples in this repository all follow a common pattern, with the following principles in mind:
 
-- Document a step-by-step process to implement each technique of Remix or optional web technology integration that (except for **1. Installing and Running Remix**) assumes you are starting with a new Remix v2 project, created by using the **With `npx`** method and default settings. The step-by-step instructions are found in the `README.md` file for each example.
+- Document a step-by-step process to implement each technique of Remix or optional web technology integration that (except for **01. Installing and Running Remix**) assumes you are starting with a new Remix v2 project, created by using the **With `npx`** method and default settings. The step-by-step instructions are found in the `README.md` file for each example.
 
 - Show the complete result of following all steps in the example project code, and include comments in the files to call out where each step can be found in the code, to make it clear how to replicate each technique in another project.
 
@@ -50,7 +50,7 @@ This method will generate the project from scratch, allowing you to manually cus
 
 #### 02f. Active Link Styling
 
-#### 02z. Facebird Messenger Demo
+#### 02z. Facebird Messenger
 
 ### 03. Forms and Data Manipulation
 
