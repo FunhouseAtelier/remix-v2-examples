@@ -1,7 +1,3 @@
-# Standard Exclusions
-**/node_modules
-**/.env
-
-# Custom Exclusions
+# Custom Exclusions (if you cloned the repo it is safe to delete these)
 **/_sundry
 .prettierrc.json

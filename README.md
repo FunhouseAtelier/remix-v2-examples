@@ -26,9 +26,15 @@ The examples in this repo all follow a common pattern, with the following princi
 
 #### With `npx`
 
+This method will generate the project in TypeScript, install and import Tailwind CSS, initialize all configuration files with standard boilerplate code, and expose the server and client entry point files. All examples found in other sections (folders) of this repository start with this method of generating a new Remix project as a baseline.
+
 #### With `remix-serve`
 
+This method will generate the project from scratch, allowing you to manually customize any aspect of the installation or configuration, and relies on the default `remix-serve` server to serve the project in a production environment with no configuration necessary on your part.
+
 #### With Express
+
+This method will generate the project from scratch, allowing you to manually customize any aspect of the installation or configuration, but it does not rely on the default `remix-serve` to serve the project in a production environment. Instead this example shows how to manually configure your own Express server.
 
 ### 2. Routing, Navigation, and Layout
 
@@ -42,7 +48,7 @@ Facebird Messenger
 
 ### 3. Forms and CRUD Operations
 
-Shopping List App
+CartPartner
 
 - data manipulation
 - deleting records
