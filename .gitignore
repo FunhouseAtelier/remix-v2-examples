@@ -1,3 +1,4 @@
 # Custom Exclusions (if you cloned the repo it is safe to delete these)
 **/_sundry
 .prettierrc.json
+new-project
