@@ -6,29 +6,42 @@
 
 ## Process
 
+### `app/routes/demo._index.tsx`
+
+1. Create the `app/routes/demo._index.tsx` file.
+
+2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo` route.
+
+### `app/routes/demo.introduction.tsx`
+
+1. Create the `app/routes/demo.introduction.tsx` file.
+
+2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/introduction` route.
+
+### `app/routes/demo.chapter1.tsx`
+
+1. Create the `app/routes/demo.chapter1.tsx` file.
+
+2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/chapter1` route.
+
 ### `app/routes/demo.tsx`
 
 1. Import the Remix `<Link>` and `<Outlet />` components.
 
 2. Export, as the default, a React function component.
 
-3. Add the `<Outlet />` component to the TSX return value where the nested routes will appear.
+3. Use the `<Link>` component to perform client-side routing to the nested routes (other than `/demo/_index`, which is the default).
+
+```tsx
+<Link to="/demo/introduction">Introduction</Link>
+<Link to="/demo/chapter1">Chapter 1</Link>
+```
+
+4. Add the `<Outlet />` component to the TSX return value where the nested routes will appear.
 
 ```tsx
 <Outlet />
 ```
-
-### `app/routes/demo._index.tsx`
-
-1. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo` route.
-
-### `app/routes/demo.introduction.tsx`
-
-1. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/introduction` route.
-
-### `app/routes/demo.chapter1.tsx`
-
-1. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/chapter1` route.
 
 ## Notes
 

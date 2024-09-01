@@ -1,3 +1,6 @@
+/* 1. Create the `app/routes/demo.chapter1.tsx` file. */
+
+/* 2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/chapter1` route. */
 export default function Section1() {
   return (
     <>

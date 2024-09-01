@@ -48,7 +48,7 @@ How to use the Remix `<Link>` component to perform client-side routing. The demo
 
 #### 02c. Nested Static Routes
 
-How to use the Remix `<Outlet />` component to display nested routes inside the layout of a parent route. The demo shows how the nested route view changes when navigating to a nested route, while preserving the layout of the parent route.
+How to use the Remix `<Outlet />` component to display nested routes inside the layout of a parent route. The demo shows how the nested route view changes when navigating to a nested route, while preserving the layout of the parent route, and how the parent route defaults to showing `_index` as the nested route.
 
 #### 02d. Nested Dynamic Routes
 
