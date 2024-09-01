@@ -1,5 +1,5 @@
 {
-  "name": "01a-with-npx",
+  "name": "02c-nested-routes",
   "private": true,
   "sideEffects": false,
   "type": "module",

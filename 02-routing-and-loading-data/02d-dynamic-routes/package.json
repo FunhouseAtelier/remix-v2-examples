@@ -1,5 +1,5 @@
 {
-  "name": "02c-nested-static-routes",
+  "name": "02d-dynamic-routes",
   "private": true,
   "sideEffects": false,
   "type": "module",
