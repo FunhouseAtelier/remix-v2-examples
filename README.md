@@ -44,15 +44,17 @@ How to use the Remix utility function `loader` to intercept a request at a route
 
 #### 02b. Client-side Routing
 
+How to use the Remix `<Link>` component to perform client-side routing. The demo shows the difference between client-side and server-side routing behavior.
+
 #### 02c. Nested Static Routes
+
+How to use the Remix `<Outlet />` component to display nested routes inside the layout of a parent route. The demo shows how the nested route view changes when navigating to a nested route, while preserving the layout of the parent route.
 
 #### 02d. Nested Dynamic Routes
 
 #### 02e. Loading Data With URL Params
 
 #### 02f. Active Link Styling
-
-#### 02z. Facebird Messenger
 
 ### 03. Forms and Data Manipulation
 

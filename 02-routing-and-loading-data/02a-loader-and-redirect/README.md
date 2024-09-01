@@ -1,4 +1,8 @@
-# Loader and Redirect
+# 02a. Loader and Redirect
+
+### Starting Point
+
+1. Replicate the result from **01a. Installing and Running Remix v2 With `npx`**.
 
 ## Process
 
@@ -40,7 +44,7 @@ export const loader = async () => {
 
 ## Notes
 
-- This redirect to a `/demo` route is included in all of the examples in this repository, because in some cases the demonstration includes nested routing, which is not possible in an `_index.tsx` file, and for the sake of showing examples it is best not to clutter the `app/root.tsx` file with the demonstration code, but rather to put that code in its own route.
+- This redirect to a `/demo` route is included in all of the examples in this repository, because in some cases the demonstration includes nested routing, which is not possible in an `_index.tsx` file, and in any case when showing examples it is best not to clutter the `app/root.tsx` file with the demonstration code, but rather to put that code in its own route.
 
 - The export of a `meta` function was removed from `app/routes/_index.tsx` because the route now only redirects to another route, thus the `meta` code was moved into the `app/root.tsx` file. This technique is covered in the **05. `<head>` Child Components** section.
 
@@ -48,7 +52,7 @@ export const loader = async () => {
 
 - When requesting to view the base URL of the web app, first the `app/root.tsx` file is loaded as the global layout for the entire app, then it attempts to render `app/routes/_index.ts` in an `<Outlet />` component. That calls the `loader` function exported by `app/routes/_index.ts`, which always runs on the server, before any more data is sent to the client, and the result is to redirect to another route. This repeats the loading process, starting with `app/root.tsx`, but this time the `<Outlet />` component attempts to render `app/routes/demo.tsx` and this succeeds because it is not interrupted by a `loader` function and there is a default export in `app/routes/demo.tsx` that is a React function component. The `<Outlet />` component is covered in **02c. Nested Static Routes**.
 
-- Note that the `loader` function could contain conditional logic to redirect only in some circumstances, such as the user is not authenticated or authorized, but otherwise render a React function component. The conditional logic could also be used to redirect to one of multiple routes, maybe based on whether the user is identified as a guest (not authenticated), a customer, or an employee.
+- The `loader` function could contain conditional logic to redirect only in some circumstances, such as the user is not authenticated or authorized, but otherwise render a React function component. The conditional logic could also be used to redirect to one of multiple routes, maybe based on whether the user is identified as a guest (not authenticated), a customer, or an employee.
 
 ## Expected Behavior
 
@@ -56,4 +60,4 @@ export const loader = async () => {
 
 ## Remix Docs References
 
-[Quick Start: Mutation Discussion](https://remix.run/docs/en/main/start/tutorial#mutation-discussion) (Scroll down to the paragraph that begins with "`action` and `loader` functions can both...")
+[Remix Tutorial: Mutation Discussion](https://remix.run/docs/en/main/start/tutorial#mutation-discussion) (Scroll down to the paragraph that begins with "`action` and `loader` functions can both...")

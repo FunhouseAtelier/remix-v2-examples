@@ -1,4 +1,4 @@
-# Installing and Running Remix v2 With `remix-serve`
+# 01b. Installing and Running Remix v2 With `remix-serve`
 
 ## Installing
 

@@ -1,4 +1,4 @@
-# Installing and Running Remix v2 With `npx`
+# 01a. Installing and Running Remix v2 With `npx`
 
 ## Installing
 

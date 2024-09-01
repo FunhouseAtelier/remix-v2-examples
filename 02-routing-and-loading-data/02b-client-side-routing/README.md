@@ -1,59 +1,39 @@
-# Client-side Routing
+# 02b. Client-side Routing
 
 ## Process
 
+### Starting Point
+
+1. Replicate the result from **02a. Loader and Redirect**.
+
 ### `app/routes/demo.tsx`
 
-1. Create an `app/routes/demo.tsx` file.
-
-2. Export, as the default, a React function component that returns some boilerplate TSX code to indicate the route being viewed.
+1. Import the Remix `Link` component.
 
 ```tsx
-export default function Demo() {
-  return (
-    <main className="p-4">
-      <h1 className="text-3xl">Loader and Redirect (demo)</h1>
-    </main>
-  )
-}
+import { Link } from '@remix-run/react'
 ```
 
-### `app/routes/_index.tsx`
-
-1. Remove all of the boilerplate code.
-
-2. Import the Remix `redirect` utility function.
+2. Add the `Link` component to the TSX return value where the link will appear.
 
 ```tsx
-import { redirect } from '@remix-run/node'
+<Link to="/demo">Navigate to /demo (client-side routing)</Link>
 ```
-
-3. Export a `loader` asynchronous function that returns the `redirect` function with a string argument that matches the relative URL of the route handled by `app/routes/demo.tsx`.
-
-```tsx
-export const loader = async () => {
-  return redirect('/demo')
-}
-```
-
-4. Rename the file as `app/routes/_index.ts`
 
 ## Notes
 
-- This redirect to a `/demo` route is included in all of the examples in this repository, because in some cases the demonstration includes nested routing, which is not possible in an `_index.tsx` file, and for the sake of showing examples it is best not to clutter the `app/root.tsx` file with the demonstration code, but rather to put that code in its own route.
+- The `<Link>` component uses a `to` prop instead of `href`. It accepts any value that could be used for the `href` attribute of an `<a>` element. It also accepts a `Partial<Path>` object, which will be covered in a future example dedicated to the `<Link>` component.
 
-- The export of a `meta` function was removed from `app/routes/_index.tsx` because the route now only redirects to another route, thus the `meta` code was moved into the `app/root.tsx` file. This technique is covered in the **05. `<head>` Child Components** section.
-
-- The `app/routes/_index.tsx` file is renamed to `app/routes/_index.ts` because a `*.tsx` file is expected to export, as the default, a React function component. Now that it only exports a `loader` function that redirects to another route it is considered a utility route, and the appropriate filename extension is `*.ts`. In practice it would still work flawlessly as a `*.tsx` file, but renaming it is the correct procedure.
-
-- When requesting to view the base URL of the web app, first the `app/root.tsx` file is loaded as the global layout for the entire app, then it attempts to render `app/routes/_index.ts` in an `<Outlet />` component. That calls the `loader` function exported by `app/routes/_index.ts`, which always runs on the server, before any more data is sent to the client, and the result is to redirect to another route. This repeats the loading process, starting with `app/root.tsx`, but this time the `<Outlet />` component attempts to render `app/routes/demo.tsx` and this succeeds because it is not interrupted by a `loader` function and there is a default export in `app/routes/demo.tsx` that is a React function component. The `<Outlet />` component is covered in **02c. Nested Static Routes**.
-
-- Note that the `loader` function could contain conditional logic to redirect only in some circumstances, such as the user is not authenticated or authorized, but otherwise render a React function component. The conditional logic could also be used to redirect to one of multiple routes, maybe based on whether the user is identified as a guest (not authenticated), a customer, or an employee.
+- The `loader` function for the `/demo` route has a one-second delay to make the navigation dynamics easier to notice.
 
 ## Expected Behavior
 
-- When navigating the the base URL of the web app (usually `http://localhost:5173` in development) you should be immediately redirected to the `/demo` route. There is no page or React component to be seen at the base URL.
+- Clicking the "Add List Item" button will add a new `<li>` element to the ordered list with the text of "list item".
+
+- Clicking the "Navigate to /demo (server-side routing)" link will reload the `/demo` route server-side. This will clear the React state, causing any list items to disappear, because the `Demo` function component did not merely re-render, it was destroyed and replaced with a new `Demo` function component.
+
+- Clicking the "Navigate to /demo (client-side routing)" link will reload the `/demo` route client-side. The page display will not change, but the navigation can be seen in the Network tab of the broswer devtools. This will preserve the React state and merely re-render the `Demo` function component after the `loader` function delay of 1 second. Although this preservation of state would not be useful when navigating away from the `/demo` route, thus destorying the `Demo` function component, it is useful when navigating to a child route nested in the `/demo` route. It can also useful for performance, if a `prefetch` prop is passed to the `<Link>` component, which will be covered in a future example dedicated to the `<Link>` component.
 
 ## Remix Docs References
 
-[Quick Start: Mutation Discussion](https://remix.run/docs/en/main/start/tutorial#mutation-discussion) (Scroll down to the paragraph that begins with "`action` and `loader` functions can both...")
+[Remix Tutorial: Client Side Routing](https://remix.run/docs/en/main/start/tutorial#client-side-routing)
