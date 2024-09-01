@@ -40,6 +40,8 @@ This method will generate the project from scratch, allowing you to manually cus
 
 #### 02a. Loader and Redirect
 
+How to use the Remix utility function `loader` to intercept a request at a route and automatically redirect to another route.
+
 #### 02b. Client-side Routing
 
 #### 02c. Nested Static Routes
