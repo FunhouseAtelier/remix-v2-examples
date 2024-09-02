@@ -40,7 +40,7 @@ This method will generate the project from scratch, allowing you to manually cus
 
 ### 02. Routing and Loading Data
 
-#### 02a. Loader and Redirect Functions
+#### 02a. `loader` and `redirect` Functions
 
 How to use the Remix utility function `loader` to intercept a request at a route and automatically redirect to another route.
 
@@ -81,6 +81,8 @@ The demo shows how to combine the conditional style classes with static classes,
 #### 03b. Creating and Updating Data
 
 #### 03c. Relative Form Actions and Destroy
+
+#### 04d. Forms Without Navigation and Optimistic UI
 
 - data mutations
   - creating a record

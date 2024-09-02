@@ -1,4 +1,4 @@
-# 02a. Loader and Redirect Functions
+# 02a. `loader` and `redirect` Functions
 
 ## Starting Point
 
