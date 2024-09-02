@@ -121,7 +121,7 @@ export default function MessageHistory() {
 
 - If the name of a route segment starts with `$` (dollar sign), that route segment is dynamically addressed, meaning any text in that place will match the route.
 
-- The `getUser` function simulates the behavior of the web server querying an external database to get the data, using hard-coded mock data for demonstration.
+- The `getUser` function simulates the behavior of the web server querying an external database to get the data, using the hard-coded mock data in `app/services/mock-data.ts` for demonstration.
 
 - The `json` utility function abbreviates the syntax required to send a "200 Success" response to the client with the data, but it can also be done from scratch.
 

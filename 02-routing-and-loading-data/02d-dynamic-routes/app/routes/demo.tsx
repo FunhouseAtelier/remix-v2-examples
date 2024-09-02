@@ -16,7 +16,7 @@ export default function Demo() {
         </Link>
       </div>
       <div className="my-6 max-w-[900px]">
-        <h2 className="mb-2 text-2xl text-center px-2 py-1 bg-yellow-500 rounded-lg">
+        <h2 className="mb-2 text-2xl text-center px-2 py-1 mx-1 border-2 border-solid border-yellow-500 rounded-lg">
           Facebird Messenger
         </h2>
         <div className="flex">

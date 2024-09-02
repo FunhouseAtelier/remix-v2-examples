@@ -72,22 +72,22 @@ The demo shows the same delayed fading effect used in the Remix Tutorial, and it
 
 ### 03. Forms and Data Manipulation
 
-CartPartner
-
 - data manipulation
 - deleting records
 - optimistic UI
 - `Form`s Without Navigation (checkbox)
 
-### 04. Search Functionality
+Mock-up: CartPartner
 
-Giggle Search
+### 04. Search Functionality
 
 - `URLSearchParams` and `GET` Submissions
 - Synchronizing URLs to Form State
 - Submitting `Form`'s `onChange`
 - Adding Search Spinner
 - Managing the History Stack
+
+Mock-up: Giggle Search
 
 ### 05. `<head>` Child Components
 

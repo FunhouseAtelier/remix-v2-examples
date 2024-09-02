@@ -1,4 +1,4 @@
-# 02e. Pending UI
+# 02f. Active Link Styling
 
 ### Starting Point
 
