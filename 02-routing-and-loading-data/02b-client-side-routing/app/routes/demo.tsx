@@ -24,7 +24,7 @@ export default function Demo() {
         </a>
       </div>
       <div className="my-4">
-        {/* 2. Add the `Link` component to the TSX return value where the link will appear. */}
+        {/* 3. Add the `Link` component to the TSX return value where the link will appear. */}
         <Link className="text-xl text-blue-500 hover:underline" to="/demo">
           Navigate to /demo (client-side routing)
         </Link>

@@ -48,7 +48,7 @@ How to use the Remix utility function `loader` to intercept a request at a route
 
 How to use the Remix `<Link>` component to perform client-side routing.
 
-The demo shows the difference between client-side and server-side routing behavior.
+The demo shows the difference between client-side and server-side routing in terms of preserving or destroying React state.
 
 #### 02c. Nested Routes
 
@@ -58,7 +58,11 @@ The demo shows how the nested route view changes when navigating to a nested rou
 
 #### 02d. Dynamic Routes
 
-#### 02e. Loading Data With URL Params
+How to use dynamic routes to load and display data based on the dynamic route segment of the URL.
+
+The demo shows how the nested dynamic route changes when changing the text in the dynamic route segment of the URL, using hard-cored mock data. It also shows how to handle cases when the text from the dynamic route segment of the URL is missing or there is no record in the mock data that matches it.
+
+#### 02e. Pending UI
 
 #### 02f. Active Link Styling
 
@@ -68,7 +72,7 @@ CartPartner
 
 - data manipulation
 - deleting records
-- pending/optimistic UI
+- optimistic UI
 - `Form`s Without Navigation (checkbox)
 
 ### 04. Search Functionality

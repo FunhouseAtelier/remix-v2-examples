@@ -12,11 +12,33 @@
 
 2. Export, as the default, a React function component that will be rendered in its own layout when navigating to the `/demo/not-nested` route.
 
+```tsx
+export default function NotNested() {
+  return (
+    <main className="p-4">
+      <h1 className="text-3xl">Nested Static Routes (demo)</h1>
+      {/* additional content */}
+    </main>
+  )
+}
+```
+
 ### `app/routes/demo._index.tsx`
 
 1. Create the `app/routes/demo._index.tsx` file.
 
 2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo` route.
+
+```tsx
+export default function Index() {
+  return (
+    <>
+      <h3 className="text-xl">Welcome to the Nested Routes demo</h3>
+      {/* additional content */}
+    </>
+  )
+}
+```
 
 ### `app/routes/demo.introduction.tsx`
 
@@ -24,38 +46,60 @@
 
 2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/introduction` route.
 
+```tsx
+export default function Introduction() {
+  return (
+    <>
+      <h3 className="text-xl">Introduction</h3>
+      {/* additional content */}
+    </>
+  )
+}
+```
+
 ### `app/routes/demo.chapter1.tsx`
 
 1. Create the `app/routes/demo.chapter1.tsx` file.
 
-2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/chapter1` route.
+2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/section1` route.
+
+```tsx
+export default function Section1() {
+  return (
+    <>
+      <h3 className="text-xl">Section 1</h3>
+      {/* additional content */}
+    </>
+  )
+}
+```
 
 ### `app/routes/demo.tsx`
 
 1. Import the Remix `<Link>` and `<Outlet />` components.
 
-2. Export, as the default, a React function component.
-
-3. Use the `<Link>` component to perform client-side routing to the not-nested route.
+2. Use the `<Link>` component to perform client-side routing to the not-nested route.
 
 ```tsx
 <Link to="/demo/not-nested">Navigate to /demo/not-nested</Link>
 ```
 
-4. Use the `<Link>` component to perform client-side routing to the nested routes.
+3. Use the `<Link>` component to perform client-side routing to the nested routes.
 
 ```tsx
 <Link to="/demo/introduction">Introduction</Link>
 <Link to="/demo/chapter1">Chapter 1</Link>
 ```
 
-5. Add the `<Outlet />` component to the TSX return value where the nested routes will appear.
+4. Add the `<Outlet />` component to the TSX return value where the nested routes will appear.
 
 ```tsx
 <Outlet />
 ```
 
 ## Notes
+
+- Except for the last `.` (period) before the `tsx` file extension, each `.` in a route file name will translate to a `/` (slash) in the URL and except for the `tsx` file extension, each part of the route file name, separated by `.`s, refers to a route segment.
 
 - An `<Outlet />` component can also be used in any nested route file except for an `_index` route, which allows for multiple levels of route nesting, and when combined with client-side routing this easily emulates the behavior of SPAs (single-page apps).
 

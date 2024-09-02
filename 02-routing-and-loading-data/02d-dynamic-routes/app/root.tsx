@@ -9,7 +9,7 @@ import './tailwind.css'
 import type { MetaFunction } from '@remix-run/node'
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'Nested Static Routes' }]
+  return [{ title: 'Dynamic Routes' }]
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {

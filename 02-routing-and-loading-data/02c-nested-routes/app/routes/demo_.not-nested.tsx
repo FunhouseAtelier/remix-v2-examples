@@ -1,5 +1,6 @@
 /* 1. Create the `app/routes/demo_.not-nested.tsx` file. */
 
+/* NOTE: The `<Link>` component is used only for demonstration purposes here. */
 import { Link } from '@remix-run/react'
 
 /* 2. Export, as the default, a React function component that will be rendered in its own layout when navigating to the `/demo/not-nested` route. */

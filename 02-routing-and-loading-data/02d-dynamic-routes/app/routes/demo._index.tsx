@@ -4,10 +4,11 @@
 export default function Index() {
   return (
     <>
-      <h3 className="text-xl">Welcome to the Nested Static Routes demo</h3>
+      <h3 className="text-xl">Welcome to the Dynamic Routes demo</h3>
       <p className="mt-4">
-        This is the index (default) nested route. Click on a button in the
-        "Navigation" left sidebar to view a different nested route.
+        This example simulates the behavior of a messaging app/route. Click on
+        the name of one of your feathered friends in the left sidebar to view
+        your message history. I bet you didn't know birds speak Latin! 😏
       </p>
     </>
   )

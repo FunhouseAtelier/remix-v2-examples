@@ -14,7 +14,13 @@
 import { Link } from '@remix-run/react'
 ```
 
-2. Add the `Link` component to the TSX return value where the link will appear.
+2. Add an `<a>` element to the TSX return value where the server-side routing link will appear.
+
+```tsx
+<a href="/demo">Navigate to /demo (server-side routing)</a>
+```
+
+3. Add the `Link` component to the TSX return value where the client-side routing link will appear.
 
 ```tsx
 <Link to="/demo">Navigate to /demo (client-side routing)</Link>
@@ -25,6 +31,8 @@ import { Link } from '@remix-run/react'
 - The `<Link>` component uses a `to` prop instead of `href`. It accepts any value that could be used for the `href` attribute of an `<a>` element. It also accepts a `Partial<Path>` object, which will be covered in a future example dedicated to the `<Link>` component.
 
 - The `loader` function for the `/demo` route has a one-second delay to make the navigation dynamics easier to notice.
+
+- When linking to an external resource, such as a page on a web site other than the web site for your app, by default Remix will make it open in a new broswer tab. If you want it to load in the same tab instead, include the attribute-value pair `target="_self"` in the `<a>` element or `<Link>` component.
 
 ## Expected Behavior
 
