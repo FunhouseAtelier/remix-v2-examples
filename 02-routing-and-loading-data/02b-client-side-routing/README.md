@@ -2,7 +2,7 @@
 
 ## Process
 
-### Starting Point
+## Starting Point
 
 1. Replicate the result from **02a. Loader and Redirect**.
 

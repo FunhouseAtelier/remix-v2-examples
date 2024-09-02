@@ -1,6 +1,6 @@
 # 02f. Active Link Styling
 
-### Starting Point
+## Starting Point
 
 1. Replicate the result from **02e. Pending UI**.
 

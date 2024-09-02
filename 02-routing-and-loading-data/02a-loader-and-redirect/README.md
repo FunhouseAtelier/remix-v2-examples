@@ -1,6 +1,6 @@
 # 02a. Loader and Redirect
 
-### Starting Point
+## Starting Point
 
 1. Replicate the result from **01a. Installing and Running Remix v2 With `npx`**.
 
