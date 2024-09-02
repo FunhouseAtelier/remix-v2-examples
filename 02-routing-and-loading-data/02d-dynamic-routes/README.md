@@ -48,7 +48,7 @@ import { useLoaderData } from '@remix-run/react'
 5. Import a server function that will get the data.
 
 ```tsx
-import { getUser } from '../services/mock-data.server'
+import { getUser } from '~/services/mock-data.server'
 ```
 
 6. Export a `loader` asynchronous function that will fetch the data from the server, based on the `userId` in the URL.
@@ -60,7 +60,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   if (!userId) {
     throw new Response(null, {
       status: 400,
-      statusText: 'Missing contactId param',
+      statusText: 'Missing userId param',
     })
   }
   const user = await getUser(userId)
@@ -119,11 +119,11 @@ export default function MessageHistory() {
 
 ## Notes
 
-- If the name of a route segment starts with `$` (dollar sign), that route segment is dynamically addressed, meaning any text in that place will match the route.
+- If the name of a route segment starts with `$` (dollar sign), that route segment is dynamically addressed, meaning any valid (for a URL) text in that place will match the route.
 
 - The `getUser` function simulates the behavior of the web server querying an external database to get the data, using the hard-coded mock data in `app/services/mock-data.ts` for demonstration.
 
-- The `json` utility function abbreviates the syntax required to send a "200 Success" response to the client with the data, but it can also be done from scratch.
+- The `json` utility function abbreviates the syntax required to send a "200 Success" response to the client with the data, but that can also be done from scratch.
 
 ## Expected Behavior
 

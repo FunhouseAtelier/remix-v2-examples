@@ -6,7 +6,7 @@ These examples were created by Funhouse Atelier to demonstrate how to implement 
 
 [https://github.com/FunhouseAtelier/remix-v2-examples](https://github.com/FunhouseAtelier/remix-v2-examples)
 
-The examples in **01. Installing and Running Remix** are based on [the official Quick Start guide](https://remix.run/docs/en/main/start/quickstart), and the examples in sections 2-4 are based on the techniques demonstrated in [the official Remix Tutorial](https://remix.run/docs/en/main/start/tutorial). Those examples are not meant to be a replacement for the Quick Start guide or Remix Tutorial, which explain in greater depth how the techniques work, especially behind the scenes, and tie them all together into one example app. The Funhouse Atelier examples mentioned above are meant to simplify the demonstration of the same techniques, for ease of atomic reference and replication.
+The examples in **01. Installing and Running Remix** are based on [the official Quick Start guide](https://remix.run/docs/en/main/start/quickstart), and the examples in sections 02-04 are based on the techniques demonstrated in [the official Remix Tutorial](https://remix.run/docs/en/main/start/tutorial). Those examples are not meant to be a replacement for the Quick Start guide or Remix Tutorial, which explain in greater depth how the techniques work, especially behind the scenes, and tie them all together into one example app. The Funhouse Atelier examples mentioned above are meant to simplify the demonstration of the same techniques, for ease of atomic reference and replication.
 
 ## Usage
 
@@ -20,7 +20,7 @@ The examples in this repository all follow a common pattern, with the following 
 
 - After the step-by-step instructions in the `README.md` files, include some notes of information that is good to know about the techniques and a description of the expected behavior of the basic demonstrations. For a more thorough explanation of the techniques and their options, there will be references to [the official Remix Docs](https://remix.run/docs/en/main).
 
-- Note that each example project folder has its own `package.json` file and NPM dependencies, but all `node_modules` folders are ignored by git, so to make the example code functional and remove any TypeScript warnings about unknown imports you must first open a terminal in the example project root folder and run the command `npm i` to install all NPM package dependencies.
+- Each example project folder has its own `package.json` file and NPM dependencies, but all `node_modules` folders are ignored by git, so to make the example code functional and remove any TypeScript warnings about unknown imports you must first open a terminal in the example project root folder and run the command `npm i` to install all NPM package dependencies.
 
 ## Outline
 
@@ -32,7 +32,7 @@ This method will generate the project in TypeScript, create `app/root.tsx` and `
 
 #### 01b. With `remix-serve`
 
-This method will generate the project from scratch, allowing you to manually customize any aspect of the installation or configuration, and relies on the default `remix-serve` server to serve the project in a production environment with no configuration necessary on your part.
+This method will generate the project from scratch, allowing you to manually customize any aspect of the installation or configuration, and relies on the default `remix-serve` to serve the project in a production environment with no configuration necessary on your part.
 
 #### 01c. With Express
 
@@ -60,7 +60,7 @@ The demo shows how the nested route view changes when navigating to a nested rou
 
 How to use dynamic routes to load and display data based on the dynamic route segment of the URL.
 
-The demo shows how the nested dynamic route changes when changing the text in the dynamic route segment of the URL, using hard-cored mock data. It also shows how to handle cases when the text from the dynamic route segment of the URL is missing or there is no record in the mock data that matches it.
+The demo shows how the nested dynamic route changes when changing the text in the dynamic route segment of the URL, using hard-coded mock data. It also shows how to handle cases when the text from the dynamic route segment of the URL is missing or there is no record in the mock data that matches it.
 
 #### 02e. Pending UI
 

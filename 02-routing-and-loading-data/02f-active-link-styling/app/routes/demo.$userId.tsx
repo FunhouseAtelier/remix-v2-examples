@@ -52,7 +52,7 @@ export default function MessageHistory() {
       {user.messages.map((message, index) => (
         <p
           key={index}
-          className={`my-2 py-1 px-2 rounded w-4/5 ${
+          className={`my-2 py-2 px-2 rounded w-4/5 ${
             index % 2 === 0 ? 'bg-emerald-500' : 'bg-teal-500 ml-auto'
           }`}
         >
