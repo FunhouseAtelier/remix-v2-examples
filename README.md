@@ -64,11 +64,15 @@ The demo shows how the nested dynamic route changes when changing the text in th
 
 #### 02e. Pending UI
 
-How to use a Remix hook to track the navigation state (i.e., idle, loading data, or submitting a form) in order to visibly convey that state to the user.
+How to use the Remix `useNavigation` hook to track the navigation state (i.e., idle, loading data, or submitting a form) in order to visibly convey that state to the user.
 
 The demo shows the same delayed fading effect used in the Remix Tutorial, and it allows you to toggle the pending UI effect on and off for comparison.
 
 #### 02f. Active Link Styling
+
+How to use the Remix `<NavLink>` component to conditionally style a navigation link when the route it links to is loading or currently being viewed.
+
+The demo shows how to combine the conditional style classes with static classes, and it uses a similar delayed transition as the pending UI effect. The Remix Tutorial uses a fancier animation for a pending navigation link that was beyond the scope of this example repository, which uses only Tailwind CSS utility classes, no custom CSS.
 
 ### 03. Forms and Data Manipulation
 

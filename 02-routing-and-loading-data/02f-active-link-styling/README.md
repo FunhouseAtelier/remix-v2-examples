@@ -14,7 +14,7 @@
 import { NavLink } from '@remix-run/react'
 ```
 
-2. Add a function to conditionally generate the classes for the `NavLink` components.
+2. Add a function to conditionally generate the classes for the `<NavLink>` components.
 
 ```tsx
 const makeNavLinkClasses = ({
@@ -32,7 +32,7 @@ const makeNavLinkClasses = ({
 }
 ```
 
-3. Pass the `makeNavLinkClasses` function to the `NavLink` components through the `className` prop.
+3. Pass the `makeNavLinkClasses` function to the `<NavLink>` components through the `className` prop.
 
 ```tsx
 <NavLink to="/demo/1" className={makeNavLinkClasses}>
@@ -48,7 +48,7 @@ const makeNavLinkClasses = ({
 
 ## Notes
 
-- If the Remix `NavLink` component is passed a function through the `className` prop it will run that function to generate the string of classes, passing it an object with `isPending` and `isActive` properties as an argument. When the route referenced by the `to` prop is being loaded, `isPending` will have a boolean value of true, and when that route has finished loading and is currently being viewed `isActive` will have a boolean value of true.
+- If the Remix `<NavLink>` component is passed a function through the `className` prop it will run that function to generate the string of classes, passing it an object with `isPending` and `isActive` properties as an argument. When the route referenced by the `to` prop is being loaded, `isPending` will have a boolean value of true, and when that route has finished loading and is currently being viewed `isActive` will have a boolean value of true.
 
 - The transition for the `isPending` conditional classes matches the transition for the "Message History" pending UI fade effect for consistency. Again the 200ms delay is used to avoid unpleasant UI flickering in the case of a fast load of the dynamic route.
 
