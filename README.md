@@ -64,6 +64,10 @@ The demo shows how the nested dynamic route changes when changing the text in th
 
 #### 02e. Pending UI
 
+How to use a Remix hook to track the navigation state (i.e., idle, loading data, or submitting a form) in order to visibly convey that state to the user.
+
+The demo shows the same delayed fading effect used in the Remix Tutorial, and it allows you to toggle the pending UI effect on and off for comparison.
+
 #### 02f. Active Link Styling
 
 ### 03. Forms and Data Manipulation

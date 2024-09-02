@@ -129,7 +129,7 @@ export default function MessageHistory() {
 
 - When navigating to the `/demo/4` route the browser's address bar should show `<BASE_URL>/demo/4` and a "404 Not Found" error message will be displayed because there is no user with an id of "4". By design it should normally not be possible to reach that route via the UI controls, only by typing it into the browser address bar.
 
-- Clicking the link for any name will navigate the browser to `<BASE_URL>/demo/<USER_ID>` and the "Message History" should show an example matching the record for that user.
+- Clicking any link in the left sidebar will navigate the browser to `<BASE_URL>/demo/<USER_ID>` and the "Message History" should show an example matching the record for that user.
 
 - If the request was sent in a hacky way, such that the dynamic `$userId` segment of the URL is missing or is not a string, a "400 Bad Request" error page will be shown.
 
