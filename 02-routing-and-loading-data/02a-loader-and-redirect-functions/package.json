@@ -1,5 +1,5 @@
 {
-  "name": "02a-loader-and-redirect",
+  "name": "02a-loader-and-redirect-functions",
   "private": true,
   "sideEffects": false,
   "type": "module",

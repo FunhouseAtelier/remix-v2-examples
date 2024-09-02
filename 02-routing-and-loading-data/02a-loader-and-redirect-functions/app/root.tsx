@@ -9,7 +9,7 @@ import './tailwind.css'
 import type { MetaFunction } from '@remix-run/node'
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'Loader and Redirect' }]
+  return [{ title: 'Loader and Redirect Functions' }]
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {

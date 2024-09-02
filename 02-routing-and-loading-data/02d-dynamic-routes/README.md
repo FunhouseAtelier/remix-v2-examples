@@ -2,7 +2,7 @@
 
 ## Starting Point
 
-1. Replicate the result from **02a. Loader and Redirect**.
+1. Replicate the result from **02a. Loader and Redirect Functions**.
 
 ## Process
 
@@ -137,4 +137,8 @@ export default function MessageHistory() {
 
 [Remix Tutorial: The Contact Route UI](https://remix.run/docs/en/main/start/tutorial#the-contact-route-ui)
 
+[Remix Tutorial: Loading Data](https://remix.run/docs/en/main/start/tutorial#loading-data)
+
 [Remix Tutorial: URL Params in Loaders](https://remix.run/docs/en/main/start/tutorial#url-params-in-loaders)
+
+[Remix Tutorial: Validating Params and Throwing Responses](https://remix.run/docs/en/main/start/tutorial#validating-params-and-throwing-responses)

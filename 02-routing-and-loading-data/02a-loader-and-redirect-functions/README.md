@@ -1,4 +1,4 @@
-# 02a. Loader and Redirect
+# 02a. Loader and Redirect Functions
 
 ## Starting Point
 
@@ -16,7 +16,7 @@
 export default function Demo() {
   return (
     <main className="p-4">
-      <h1 className="text-3xl">Loader and Redirect (demo)</h1>
+      <h1 className="text-3xl">Loader and Redirect Functions (demo)</h1>
     </main>
   )
 }

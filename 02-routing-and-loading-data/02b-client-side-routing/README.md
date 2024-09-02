@@ -4,7 +4,7 @@
 
 ## Starting Point
 
-1. Replicate the result from **02a. Loader and Redirect**.
+1. Replicate the result from **02a. Loader and Redirect Functions**.
 
 ### `app/routes/demo.tsx`
 

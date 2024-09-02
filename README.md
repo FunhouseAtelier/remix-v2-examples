@@ -40,7 +40,7 @@ This method will generate the project from scratch, allowing you to manually cus
 
 ### 02. Routing and Loading Data
 
-#### 02a. Loader and Redirect
+#### 02a. Loader and Redirect Functions
 
 How to use the Remix utility function `loader` to intercept a request at a route and automatically redirect to another route.
 
@@ -76,12 +76,28 @@ The demo shows how to combine the conditional style classes with static classes,
 
 ### 03. Forms and Data Manipulation
 
-- data manipulation
+#### 03a. Form Component and Action Function
+
+#### 03b. Creating and Updating Data
+
+#### 03c. Relative Form Actions and Destroy
+
+- data mutations
+  - creating a record
+    - `<Form>` component and `action` function
+    - redirect to edit page
+  - updating a record
+    - edit page
+    - `FormData`
+    - Cancel button
 - deleting records
-- optimistic UI
+  - relative form actions
 - `Form`s Without Navigation (checkbox)
+  - optimistic UI
 
 Mock-up: CartPartner
+
+https://remix.run/docs/en/main/start/tutorial#creating-contacts
 
 ### 04. Search Functionality
 
