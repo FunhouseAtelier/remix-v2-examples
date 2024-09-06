@@ -13,7 +13,7 @@ export const loader = async () => {
 /* 4. Export an `action` function that creates a new list item. */
 export const action = async () => {
   await createListItem()
-  return json({})
+  return json(null)
 }
 
 export default function Demo() {

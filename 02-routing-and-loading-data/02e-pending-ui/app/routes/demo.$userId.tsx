@@ -1,18 +1,10 @@
-/* 1. Create the `app/routes/demo.$userId.tsx` file. */
-
-/* 2. Import the type declaration for the `loader` function arguments. */
 import type { LoaderFunctionArgs } from '@remix-run/node'
-/* 3. Import the Remix `json` utility function. */
 import { json } from '@remix-run/node'
-/* 4. Import the Remix `useLoaderData` hook. */
 import { useLoaderData } from '@remix-run/react'
-/* 5. Import a server function that will get the data. */
 import { getUser } from '~/services/mock-data.server'
 
-/* 6. Export a `loader` asynchronous function that will fetch the data from the server, based on the `userId` in the URL. */
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { userId } = params
-  /* If no userId was found in the URL params, send a "400 Bad Request" response to the client. */
   if (!userId) {
     throw json(null, {
       status: 400,
@@ -20,20 +12,16 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     })
   }
   const user = await getUser(userId)
-  /* If no user data is returned by `getUser()`, send a "404 Not Found" response to the client. */
   if (!user) {
     throw json(null, {
       status: 404,
       statusText: 'User not found',
     })
   }
-  /* Otherwise, expose the user data to the client. */
   return json({ user })
 }
 
-/* 7. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/<ANY_VALID_STRING>` route. */
 export default function MessageHistory() {
-  /* 8. In the React function component assign the exposed data to a variable with the `useLoaderData` hook. */
   const { user } = useLoaderData<typeof loader>()
 
   return (

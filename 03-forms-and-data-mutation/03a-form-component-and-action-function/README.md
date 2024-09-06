@@ -65,6 +65,8 @@ const { allListItems } = useLoaderData<typeof loader>()
 
 - After the `action` function finishes, the `loader` function will automatically run again to update the list with the newly created item, so no additional code is needed to revalidate the data that is exposed to the client after making a POST request.
 
+- Just like the `loader` function the `action` function is expected to redirect to another route, throw a response, or return a response with some data. If the `action` function returns `undefined` or some other value that cannot be parsed as an HTTP response, an error will be thrown, so in this example it returns `json(null)`.
+
 ## Expected Behavior
 
 - Clicking the "ADD NEW ITEM" button will add a new generic item to the list, both in the server-side data set and in the data exposed to the client.
