@@ -1,10 +1,12 @@
-# 03a. `<Form>` Component and `action` Function
+# 03b. Updating Data and Form Error Handling
 
 ## Process
 
 ### Starting Point
 
 1. Replicate the result from **02a. `loader` and `redirect` Functions**.
+
+===
 
 ### Edit `app/routes/demo.tsx`
 
@@ -30,12 +32,12 @@ export const loader = async () => {
 }
 ```
 
-4. Export an `action` function that creates a new list item.
+4. Export an `action` function that creates a new list item and exposes the data for that new item to the client.
 
 ```tsx
 export const action = async () => {
-  await createListItem()
-  return json({})
+  const newListItem = await createListItem()
+  return json({ newListItem })
 }
 ```
 

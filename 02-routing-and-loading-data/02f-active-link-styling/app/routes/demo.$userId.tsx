@@ -14,7 +14,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { userId } = params
   /* If no userId was found in the URL params, send a "400 Bad Request" response to the client. */
   if (!userId) {
-    throw new Response(null, {
+    throw json(null, {
       status: 400,
       statusText: 'Missing userId param',
     })
@@ -22,7 +22,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   const user = await getUser(userId)
   /* If no user data is returned by `getUser()`, send a "404 Not Found" response to the client. */
   if (!user) {
-    throw new Response(null, {
+    throw json(null, {
       status: 404,
       statusText: 'User not found',
     })

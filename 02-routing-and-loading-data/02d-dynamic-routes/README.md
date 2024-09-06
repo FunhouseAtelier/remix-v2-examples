@@ -47,14 +47,14 @@ import { useLoaderData } from '@remix-run/react'
 import { getUser } from '~/services/mock-data.server'
 ```
 
-5. Export a `loader` asynchronous function that will fetch the data from the server, based on the `userId` in the URL.
+5. Export a `loader` asynchronous function that will fetch the data from the server, based on the `userId` in the URL, then expose that data to the client.
 
 ```tsx
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { userId } = params
   /* If no userId was found in the URL params, send a "400 Bad Request" response to the client. */
   if (!userId) {
-    throw new Response(null, {
+    throw json(null, {
       status: 400,
       statusText: 'Missing userId param',
     })
@@ -62,7 +62,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   const user = await getUser(userId)
   /* If no user data is returned by `getUser()`, send a "404 Not Found" response to the client. */
   if (!user) {
-    throw new Response(null, {
+    throw json(null, {
       status: 404,
       statusText: 'User not found',
     })
@@ -85,14 +85,10 @@ export default function MessageHistory() {
 }
 ```
 
-7. In the React function component assign the exposed data to a variable with the `useLoaderData` hook.
+5. In the React function component assign the data exposed by the `loader` function to a varible with the `useLoaderData` hook.
 
 ```tsx
-export default function MessageHistory() {
-  const { user } = useLoaderData<typeof loader>()
-
-  /* additional content */
-}
+const { user } = useLoaderData<typeof loader>()
 ```
 
 ### Edit `app/routes/demo.tsx`
@@ -119,7 +115,11 @@ export default function MessageHistory() {
 
 - The `getUser` function simulates the behavior of the web server querying an external database to get the data, using the hard-coded mock data in `app/services/mock-data.ts` for demonstration.
 
-- The `json` utility function abbreviates the syntax required to send a "200 Success" response to the client with the data, but that can also be done from scratch.
+- The `json` utility function abbreviates the syntax required to send a response to the client with some data, or `null` if there is no relevant data to send, as the first argment passed, and this value will be automatically serialized. Optionally a second argument may be passed with some status information and/or headers defined in an object.
+
+- The `loader` function is expected to redirect to another route, throw a response, or return a response with some data. If the `loader` function returns `undefined` or some other value that cannot be parsed as an HTTP response, an error will be thrown.
+
+- In this example the `json()` responses for "400 Bad Request" and "404 Not Found" are thrown to prevent the React function component from rendering, which would cause a TypeError because `user` cannot be destructured from the `null` data response. Using `throw` when an error occurs in a `loader` function also has the advantage of breaking out of any call stack, such as when being executed inside of a nested function.
 
 ## Expected Behavior
 

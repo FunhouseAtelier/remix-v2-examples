@@ -78,11 +78,11 @@ The demo shows how to combine the conditional style classes with static classes,
 
 #### 03a. `<Form>` Component and `action` Function
 
-#### 03b. Creating and Updating Data
+#### 03b. Updating Data and Form Error Handling
 
 #### 03c. Relative Form Actions and Destroy
 
-#### 04d. Forms Without Navigation and Optimistic UI
+#### 03d. Forms Without Navigation and Optimistic UI
 
 Mock-up: CartPartner
 

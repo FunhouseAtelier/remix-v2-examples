@@ -4,7 +4,7 @@ import { Link } from '@remix-run/react'
 export default function NotNested() {
   return (
     <main className="p-4">
-      <h1 className="text-3xl">Nested Static Routes (demo)</h1>
+      <h1 className="text-3xl">Nested Routes (demo)</h1>
       <div className="my-4">
         <Link className="text-xl text-blue-500 hover:underline" to="/demo">
           Navigate to /demo
