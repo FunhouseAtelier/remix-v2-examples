@@ -6,7 +6,7 @@
 
 ## Process
 
-### `app/routes/demo.tsx`
+### Edit `app/routes/demo.tsx`
 
 1. Import the Remix `NavLink` component.
 

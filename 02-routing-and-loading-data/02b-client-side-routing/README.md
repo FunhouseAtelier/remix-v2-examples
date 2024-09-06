@@ -6,7 +6,7 @@
 
 1. Replicate the result from **02a. `loader` and `redirect` Functions**.
 
-### `app/routes/demo.tsx`
+### Edit `app/routes/demo.tsx`
 
 1. Import the Remix `Link` component.
 

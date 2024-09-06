@@ -1,6 +1,4 @@
-/* 1. Create the `app/routes/demo.tsx` file. */
-
-/* 2. Export, as the default, a React function component that returns some boilerplate TSX code to indicate the route being viewed. */
+/* 1. Export, as the default, a React function component that returns some boilerplate TSX code to indicate the route being viewed. */
 export default function Demo() {
   return (
     <main className="p-4">

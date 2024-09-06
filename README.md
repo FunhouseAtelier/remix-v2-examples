@@ -2,7 +2,7 @@
 
 ## Introduction
 
-These examples were created by Funhouse Atelier to demonstrate how to implement various techniques of the [Remix](https://remix.run/) version 2 framework and integrate other web technologies with it. They are available in a public repository on GitHub:
+These examples were created by Funhouse Atelier to demonstrate how to implement various techniques of the [Remix.run](https://remix.run/) version 2 framework and integrate other web technologies with it. They are available in a public repository on GitHub:
 
 [https://github.com/FunhouseAtelier/remix-v2-examples](https://github.com/FunhouseAtelier/remix-v2-examples)
 
@@ -12,15 +12,15 @@ The examples in **01. Installing and Running Remix** are based on [the official 
 
 The examples in this repository all follow a common pattern, with the following principles in mind:
 
-- Document a step-by-step process to implement each technique of Remix or optional web technology integration that (except for **01. Installing and Running Remix**) assumes you are starting with a new Remix v2 project, created by using the **01a. With `npx`** method and default settings. The step-by-step instructions are found in the `README.md` file inside each example project root folder.
+- Document a step-by-step process to implement each technique of Remix or optional web technology integration that (except for **01. Installing and Running Remix**) assumes you are starting with a new Remix v2 project, created by using the **01a. With `npx`** method and default settings. The step-by-step instructions are found in the `README.md` file inside each example project root folder, and they are generally organized by the pathname of the file to be created or edited.
 
-- Show the complete result of following all steps in the example project code, and include comments in the files to call out where each step can be found in the code, to make it clear how to replicate each technique in another project.
+- Show the complete result of following all steps in the example project code, and include comments in the files to call out where each step can be found in the code, to make it clear how to replicate each technique in another Remix project.
 
-- Include additional code for basic demonstration of the techniques, including hyperlinks, buttons, dynamic displays, and mock data sets. These are not a part of the step-by-step replication process.
+- Include additional code for basic demonstration of the techniques, including hyperlinks, buttons, dynamic displays, and mock data sets. These are not an essential part of the step-by-step replication process.
 
 - After the step-by-step instructions in the `README.md` files, include some notes of information that is good to know about the techniques and a description of the expected behavior of the basic demonstrations. For a more thorough explanation of the techniques and their options, there will be references to [the official Remix Docs](https://remix.run/docs/en/main).
 
-- Each example project folder has its own `package.json` file and NPM dependencies, but all `node_modules` folders are ignored by git, so to make the example code functional and remove any TypeScript warnings about unknown imports you must first open a terminal in the example project root folder and run the command `npm i` to install all NPM package dependencies.
+Each example project folder has its own `package.json` file and NPM dependencies, but all `node_modules` folders are ignored by git, so to make the example code functional and remove any TypeScript warnings about unknown imports you must first open a terminal in the example project root folder and run the command `npm i` to install all NPM package dependencies.
 
 ## Outline
 
@@ -42,7 +42,7 @@ This method will generate the project from scratch, allowing you to manually cus
 
 #### 02a. `loader` and `redirect` Functions
 
-How to use the Remix utility function `loader` to intercept a request at a route and automatically redirect to another route.
+How to use the Remix utility function `loader` to intercept a request at a route and the Remix utility function `redirect` to automatically forward the request to another route.
 
 #### 02b. Client-side Routing
 
@@ -60,7 +60,7 @@ The demo shows how the nested route view changes when navigating to a nested rou
 
 How to use dynamic routes to load and display data based on the dynamic route segment of the URL.
 
-The demo shows how the nested dynamic route changes when changing the text in the dynamic route segment of the URL, using hard-coded mock data. It also shows how to handle cases when the text from the dynamic route segment of the URL is missing or there is no record in the mock data that matches it.
+The demo shows how the nested dynamic route changes when changing the text in the dynamic route segment of the URL, using hard-coded mock data to simulate various users' information that would normally be stored in a database. It also shows how to handle cases when the text from the dynamic route segment of the URL is missing or there is no record in the mock data that matches it.
 
 #### 02e. Pending UI
 
@@ -74,9 +74,9 @@ How to use the Remix `<NavLink>` component to conditionally style a navigation l
 
 The demo shows how to combine the conditional style classes with static classes, and it uses a similar delayed transition as the pending UI effect. The Remix Tutorial uses a fancier animation for a pending navigation link that was beyond the scope of this example repository, which uses only Tailwind CSS utility classes, no custom CSS.
 
-### 03. Forms and Data Manipulation
+### 03. Forms and Data Mutation
 
-#### 03a. Form Component and Action Function
+#### 03a. `<Form>` Component and `action` Function
 
 #### 03b. Creating and Updating Data
 
@@ -84,22 +84,7 @@ The demo shows how to combine the conditional style classes with static classes,
 
 #### 04d. Forms Without Navigation and Optimistic UI
 
-- data mutations
-  - creating a record
-    - `<Form>` component and `action` function
-    - redirect to edit page
-  - updating a record
-    - edit page
-    - `FormData`
-    - Cancel button
-- deleting records
-  - relative form actions
-- `Form`s Without Navigation (checkbox)
-  - optimistic UI
-
 Mock-up: CartPartner
-
-https://remix.run/docs/en/main/start/tutorial#creating-contacts
 
 ### 04. Search Functionality
 

@@ -1,6 +1,4 @@
-/* 1. Create the `app/routes/demo.introduction.tsx` file. */
-
-/* 2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/introduction` route. */
+/* 1. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/introduction` route. */
 export default function Introduction() {
   return (
     <>

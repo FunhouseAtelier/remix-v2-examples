@@ -6,11 +6,9 @@
 
 ## Process
 
-### `app/routes/demo.tsx`
+### Create `app/routes/demo.tsx`
 
-1. Create the `app/routes/demo.tsx` file.
-
-2. Export, as the default, a React function component that returns some boilerplate TSX code to indicate the route being viewed.
+1. Export, as the default, a React function component that returns some boilerplate TSX code to indicate the route being viewed.
 
 ```tsx
 export default function Demo() {
@@ -22,7 +20,7 @@ export default function Demo() {
 }
 ```
 
-### `app/routes/_index.tsx`
+### Edit `app/routes/_index.tsx`
 
 1. Remove all of the boilerplate code.
 
@@ -44,7 +42,7 @@ export const loader = async () => {
 
 ## Notes
 
-- This redirect to a `/demo` route is included in all of the examples in this repository, because in some cases the demonstration includes nested routing, which is not possible in an `_index.tsx` file, and in any case when showing examples it is best not to clutter the `app/root.tsx` file with the demonstration code, but rather to put that code in its own route.
+- This redirect to a `/demo` route is a starting point for many of the examples in this repository, because in some cases the demonstration includes nested routing, which is not possible in an `_index.tsx` file, and in any case when showing examples it is best not to clutter the `app/root.tsx` file with the demonstration code, but rather to put that code in its own route. The redirect to the `/demo` route then serves as a convenience, so that there is no `/` (root) route you might load first and then need to navigate to the `/demo` route.
 
 - The export of a `meta` function was removed from `app/routes/_index.tsx` because the route now only redirects to another route, thus the `meta` code was moved into the `app/root.tsx` file. This technique is covered in the **05. `<head>` Child Components** section.
 

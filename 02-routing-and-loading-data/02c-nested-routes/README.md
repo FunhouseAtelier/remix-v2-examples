@@ -6,11 +6,9 @@
 
 ## Process
 
-### `app/routes/demo_.not-nested.tsx`
+### Create `app/routes/demo_.not-nested.tsx`
 
-1. Create the `app/routes/demo_.not-nested.tsx` file.
-
-2. Export, as the default, a React function component that will be rendered in its own layout when navigating to the `/demo/not-nested` route.
+1. Export, as the default, a React function component that will be rendered in its own layout when navigating to the `/demo/not-nested` route.
 
 ```tsx
 export default function NotNested() {
@@ -23,11 +21,9 @@ export default function NotNested() {
 }
 ```
 
-### `app/routes/demo._index.tsx`
+### Create `app/routes/demo._index.tsx`
 
-1. Create the `app/routes/demo._index.tsx` file.
-
-2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo` route.
+1. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo` route.
 
 ```tsx
 export default function Index() {
@@ -40,11 +36,9 @@ export default function Index() {
 }
 ```
 
-### `app/routes/demo.introduction.tsx`
+### Create `app/routes/demo.introduction.tsx`
 
-1. Create the `app/routes/demo.introduction.tsx` file.
-
-2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/introduction` route.
+1. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/introduction` route.
 
 ```tsx
 export default function Introduction() {
@@ -57,11 +51,9 @@ export default function Introduction() {
 }
 ```
 
-### `app/routes/demo.chapter1.tsx`
+### Create `app/routes/demo.section1.tsx`
 
-1. Create the `app/routes/demo.chapter1.tsx` file.
-
-2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/section1` route.
+1. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/section1` route.
 
 ```tsx
 export default function Section1() {
@@ -74,7 +66,7 @@ export default function Section1() {
 }
 ```
 
-### `app/routes/demo.tsx`
+### Edit `app/routes/demo.tsx`
 
 1. Import the Remix `<Link>` and `<Outlet />` components.
 
@@ -100,6 +92,8 @@ export default function Section1() {
 ## Notes
 
 - Except for the last `.` (period) before the `tsx` file extension, each `.` in a route file name will translate to a `/` (slash) in the URL and except for the `tsx` file extension, each part of the route file name, separated by `.`s, refers to a route segment.
+
+- To avoid the default behavior of route nesting, in the filename you can follow a segment name with an `_`, as in `app/routes/demo_.not-nested.tsx` to indicate that this route will use its own layout instead of being nested inside the parent segment layout.
 
 - An `<Outlet />` component can also be used in any nested route file except for an `_index` route, which allows for multiple levels of route nesting, and when combined with client-side routing this easily emulates the behavior of SPAs (single-page apps).
 

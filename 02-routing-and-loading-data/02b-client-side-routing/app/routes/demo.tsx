@@ -37,7 +37,7 @@ export default function Demo() {
           Add List Item
         </button>
       </div>
-      <ol className="my-4 px-8 list-decimal">
+      <ol className="my-4 px-8 max-w-[900px] list-decimal">
         {listItems.map((item, index) => (
           <li key={index}>{item}</li>
         ))}

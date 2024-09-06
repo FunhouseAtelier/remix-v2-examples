@@ -6,11 +6,9 @@
 
 ## Process
 
-### `app/routes/demo._index.tsx`
+### Create `app/routes/demo._index.tsx`
 
-1. Create the `app/routes/demo._index.tsx` file.
-
-2. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo` route.
+1. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo` route.
 
 ```tsx
 export default function Index() {
@@ -23,35 +21,33 @@ export default function Index() {
 }
 ```
 
-### `app/routes/demo.$userId.tsx`
+### Create `app/routes/demo.$userId.tsx`
 
-1. Create the `app/routes/demo.$userId.tsx` file.
-
-2. Import the type declaration for the `loader` function arguments.
+1. Import the type declaration for the `loader` function arguments.
 
 ```tsx
 import type { LoaderFunctionArgs } from '@remix-run/node'
 ```
 
-3. Import the Remix `json` utility function.
+2. Import the Remix `json` utility function.
 
 ```tsx
 import { json } from '@remix-run/node'
 ```
 
-4. Import the Remix `useLoaderData` hook.
+3. Import the Remix `useLoaderData` hook.
 
 ```tsx
 import { useLoaderData } from '@remix-run/react'
 ```
 
-5. Import a server function that will get the data.
+4. Import a server function that will get the data.
 
 ```tsx
 import { getUser } from '~/services/mock-data.server'
 ```
 
-6. Export a `loader` asynchronous function that will fetch the data from the server, based on the `userId` in the URL.
+5. Export a `loader` asynchronous function that will fetch the data from the server, based on the `userId` in the URL.
 
 ```tsx
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -76,7 +72,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 }
 ```
 
-7. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/<ANY_VALID_STRING>` route.
+6. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/<ANY_VALID_STRING>` route.
 
 ```tsx
 export default function MessageHistory() {
@@ -89,7 +85,7 @@ export default function MessageHistory() {
 }
 ```
 
-8. In the React function component assign the exposed data to a variable with the `useLoaderData` hook.
+7. In the React function component assign the exposed data to a variable with the `useLoaderData` hook.
 
 ```tsx
 export default function MessageHistory() {
@@ -99,7 +95,7 @@ export default function MessageHistory() {
 }
 ```
 
-### `app/routes/demo.tsx`
+### Edit `app/routes/demo.tsx`
 
 1. Import the Remix `<Link>` and `<Outlet />` components.
 
