@@ -28,7 +28,7 @@ const makeNavLinkClasses = ({
     ? 'bg-purple-500 transition-colors duration-200 delay-200'
     : isActive
     ? 'bg-fuchsia-500'
-    : 'bg-violet-500'
+    : 'bg-violet-400'
 }
 ```
 

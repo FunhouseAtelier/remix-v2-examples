@@ -10,6 +10,7 @@ export async function createListItem() {
     createdAt: new Date().toLocaleString(),
   }
   allListItems.push(newListItem)
+  return newListItem
 }
 
 export interface ListItem {

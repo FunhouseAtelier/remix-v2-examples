@@ -78,6 +78,10 @@ The demo shows how to combine the conditional style classes with static classes,
 
 #### 03a. `<Form>` Component and `action` Function
 
+How to use the Remix `<Form>` component and `action` function to easily handle form submission events, respond to the client with data about the database transaction, and automatically revalidate the data being displayed on the web page.
+
+The demo shows the effects by adding a new item to a mock shopping list every time the "ADD NEW ITEM" button is pressed, and also shows a message to confirm a new item was added, referencing the item by its unique ID, which is returned from the server each time a list item is created.
+
 #### 03b. Updating Data and Form Error Handling
 
 #### 03c. Relative Form Actions and Destroy

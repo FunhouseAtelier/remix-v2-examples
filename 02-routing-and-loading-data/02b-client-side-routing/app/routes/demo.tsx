@@ -23,7 +23,7 @@ export default function Demo() {
           Navigate to /demo (server-side routing)
         </a>
       </div>
-      <div className="my-4">
+      <div className="my-4 max-w-[900px]">
         {/* 3. Add the `Link` component to the TSX return value where the link will appear. */}
         <Link className="text-xl text-blue-500 hover:underline" to="/demo">
           Navigate to /demo (client-side routing)
@@ -31,13 +31,13 @@ export default function Demo() {
       </div>
       <div className="mt-6 mb-4">
         <button
-          className="text-lg py-1 px-2 bg-violet-500 rounded-lg"
+          className="text-lg py-1 px-2 bg-violet-400 rounded-lg"
           onClick={addListItem}
         >
           Add List Item
         </button>
       </div>
-      <ol className="my-4 px-8 max-w-[900px] list-decimal">
+      <ol className="my-4 px-8 list-decimal">
         {listItems.map((item, index) => (
           <li key={index}>{item}</li>
         ))}

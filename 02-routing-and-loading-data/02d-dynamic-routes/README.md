@@ -113,13 +113,13 @@ const { user } = useLoaderData<typeof loader>()
 
 - If the name of a route segment starts with `$` (dollar sign), that route segment is dynamically addressed, meaning any valid (for a URL) text in that place will match the route.
 
-- The `getUser` function simulates the behavior of the web server querying an external database to get the data, using the hard-coded mock data in `app/services/mock-data.ts` for demonstration.
+- The `getUser` function simulates the behavior of the web server querying a database to get the data, using the hard-coded mock data in `app/services/mock-data.ts` for demonstration.
 
 - The `json` utility function abbreviates the syntax required to send a response to the client with some data, or `null` if there is no relevant data to send, as the first argment passed, and this value will be automatically serialized. Optionally a second argument may be passed with some status information and/or headers defined in an object.
 
 - The `loader` function is expected to redirect to another route, throw a response, or return a response with some data. If the `loader` function returns `undefined` or some other value that cannot be parsed as an HTTP response, an error will be thrown.
 
-- In this example the `json()` responses for "400 Bad Request" and "404 Not Found" are thrown to prevent the React function component from rendering, which would cause a TypeError because `user` cannot be destructured from the `null` data response. Using `throw` when an error occurs in a `loader` function also has the advantage of breaking out of any call stack, such as when being executed inside of a nested function.
+- In this example the `json()` responses for "400 Bad Request" and "404 Not Found" are thrown to prevent the React function component from rendering, which would cause a TypeError because `user` cannot be destructured from the `null` data response. Using `throw` when an error occurs in a `loader` function also has the advantage of breaking out of any call stack, such as when being executed inside of a nested function. In a complete app these error responses could be handled by a React error boundary.
 
 ## Expected Behavior
 

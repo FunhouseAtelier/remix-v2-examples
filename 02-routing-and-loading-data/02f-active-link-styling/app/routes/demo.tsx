@@ -15,7 +15,7 @@ const makeNavLinkClasses = ({
       ? 'bg-purple-500 transition-colors duration-200 delay-200'
       : isActive
       ? 'bg-fuchsia-500'
-      : 'bg-violet-500'
+      : 'bg-violet-400'
   }`
 }
 
@@ -23,14 +23,14 @@ export default function Demo() {
   const navigation = useNavigation()
 
   return (
-    <main className="p-4">
+    <main className="p-4 max-w-[900px]">
       <h1 className="text-3xl">Active Link Styling (demo)</h1>
       <div className="my-4">
         <Link className="text-xl text-blue-500 hover:underline" to="/demo">
           Navigate to /demo
         </Link>
       </div>
-      <div className="my-6 max-w-[900px]">
+      <div className="my-6">
         <h2 className="mb-2 text-2xl text-center px-2 py-1 mx-1 border-2 border-solid border-yellow-500 rounded-lg">
           Facebird Messenger
         </h2>
