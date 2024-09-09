@@ -2,10 +2,12 @@ const listItemData: ListItemData = {
   lastId: 0,
   byId: {},
   getAll() {
-    return Object.entries(this.byId).map(([id, data]) => {
-      const { createdAt } = data
-      return { id, createdAt }
-    })
+    return Object.entries(this.byId)
+      .reverse()
+      .map(([id, data]) => {
+        const { createdAt } = data
+        return { id, createdAt }
+      })
   },
   createOne() {
     this.byId[++this.lastId] = {

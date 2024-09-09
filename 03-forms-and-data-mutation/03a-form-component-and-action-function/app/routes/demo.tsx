@@ -49,7 +49,7 @@ export default function Demo() {
       <ol className="my-4">
         {allListItems.map((item: ListItem) => (
           <li key={item.id} className="my-2 flex">
-            <div className="border-2 border-solid border-emerald-500 rounded-lg px-2 py-1 bg-teal-500 grow">
+            <div className="border-2 border-solid border-lime-500 rounded-lg px-2 py-1 bg-emerald-500 grow">
               item #{item.id} created at {item.createdAt}
             </div>
           </li>

@@ -84,6 +84,10 @@ The demo shows the effects by adding a new item to a mock shopping list every ti
 
 #### 03b. Relative Actions and Form Data
 
+How to use relative actions to have a Remix `<Form>` component that posts to a different route when submitted, and how to then extract the data from the form in the `action` function that handles the form submission.
+
+The demo shows how to handle the creation of new records and updating existing records, using nested routes to switch between forms in the same parent layout.
+
 #### 03c. Forms Without Navigation and Optimistic UI
 
 ### 04. Search Functionality
