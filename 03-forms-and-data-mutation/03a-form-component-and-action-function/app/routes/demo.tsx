@@ -1,3 +1,4 @@
+import type { ListItem } from '~/services/mock-data.server'
 /* 1. Import the Remix `json` utility function, `<Form>` component, `useActionData` and `useLoaderData` hooks. */
 import { json } from '@remix-run/node'
 import { Form, useActionData, useLoaderData } from '@remix-run/react'
@@ -12,8 +13,8 @@ export const loader = async () => {
 
 /* 4. Export an `action` function that creates a new list item and exposes the ID of the new item to the client. */
 export const action = async () => {
-  const newListItem = await createListItem()
-  return json({ newListItemId: newListItem.id })
+  const newListItemId = await createListItem()
+  return json({ newListItemId })
 }
 
 export default function Demo() {
@@ -25,10 +26,10 @@ export default function Demo() {
   return (
     <main className="p-4 max-w-[900px]">
       <h1 className="text-3xl">Form Component and Action Function (demo)</h1>
-      <h2 className="my-6 text-2xl text-center px-2 py-1 mx-1 border-2 border-solid border-yellow-500 rounded-lg">
+      <h2 className="my-6 text-2xl text-center px-2 py-1 border-2 border-solid border-yellow-500 rounded-lg">
         CartPartner: Your Little Shopping Buddy
       </h2>
-      <div className="my-4">
+      <div className="my-4 flex gap-2 items-center">
         {/* 7. In the TSX return value of the React function component include a Remix `<Form>` component with a `method` prop value of `post`, and inside the `<Form>` component add a `<button>` element with a `type` attribute value of `submit`. */}
         <Form method="post">
           <button
@@ -38,8 +39,6 @@ export default function Demo() {
             ADD NEW ITEM
           </button>
         </Form>
-      </div>
-      <div className="my-4 h-6">
         {newListItemId && (
           <p className="text-neutral-700">
             Successfully created list item #{newListItemId}
@@ -47,13 +46,12 @@ export default function Demo() {
         )}
       </div>
       <h3 className="my-4 text-xl">Shopping List:</h3>
-      <ol className="my-4 px-8">
-        {allListItems.map((item) => (
-          <li
-            key={item.id}
-            className="my-2 border-2 border-solid border-lime-500 rounded-lg px-2 py-1 text-lg bg-emerald-500"
-          >
-            item #{item.id} created at {item.createdAt}
+      <ol className="my-4">
+        {allListItems.map((item: ListItem) => (
+          <li key={item.id} className="my-2 flex">
+            <div className="border-2 border-solid border-emerald-500 rounded-lg px-2 py-1 bg-teal-500 grow">
+              item #{item.id} created at {item.createdAt}
+            </div>
           </li>
         ))}
       </ol>

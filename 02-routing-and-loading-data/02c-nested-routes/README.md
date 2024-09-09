@@ -70,6 +70,10 @@ export default function Section1() {
 
 1. Import the Remix `<Link>` and `<Outlet />` components.
 
+```tsx
+import { Link, Outlet } from '@remix-run/react'
+```
+
 2. Use the `<Link>` component to perform client-side routing to the not-nested route.
 
 ```tsx

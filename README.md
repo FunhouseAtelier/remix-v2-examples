@@ -82,13 +82,9 @@ How to use the Remix `<Form>` component and `action` function to easily handle f
 
 The demo shows the effects by adding a new item to a mock shopping list every time the "ADD NEW ITEM" button is pressed, and also shows a message to confirm a new item was added, referencing the item by its unique ID, which is returned from the server each time a list item is created.
 
-#### 03b. Updating Data and Form Error Handling
+#### 03b. Relative Actions and Form Data
 
-#### 03c. Relative Form Actions and Destroy
-
-#### 03d. Forms Without Navigation and Optimistic UI
-
-Mock-up: CartPartner
+#### 03c. Forms Without Navigation and Optimistic UI
 
 ### 04. Search Functionality
 
@@ -120,3 +116,15 @@ Mock-up: Giggle Search
 #### With Remix Auth
 
 #### With Clerk
+
+## Future Plans
+
+### Modals
+
+### Error Handling
+
+### Asset Delivery
+
+#### With Cloudinary
+
+#### With a blob-store

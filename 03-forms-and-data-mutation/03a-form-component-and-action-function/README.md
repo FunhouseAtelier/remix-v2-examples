@@ -34,8 +34,8 @@ export const loader = async () => {
 
 ```tsx
 export const action = async () => {
-  const newListItem = await createListItem()
-  return json({ newListItemId: newListItem.id })
+  const newListItemId = await createListItem()
+  return json({ newListItemId })
 }
 ```
 
@@ -45,7 +45,7 @@ export const action = async () => {
 const { allListItems } = useLoaderData<typeof loader>()
 ```
 
-6. In the React function component assign the data exposed by the `action` function to a varible with the `useActionData` hook, or if the value returned by `useActionData` is nullish then destructure from an empty object to leave the variable undefined.
+6. In the React function component assign the data exposed by the `action` function to a varible with the `useActionData` hook, or if the value returned by `useActionData()` is nullish then destructure from an empty object to leave the variable undefined.
 
 ```tsx
 const { newListItemId } = useActionData<typeof action>() ?? {}
@@ -73,10 +73,12 @@ const { newListItemId } = useActionData<typeof action>() ?? {}
 
 ## Expected Behavior
 
-- Clicking the "ADD NEW ITEM" button will add a new generic item to the list, both in the server-side data set and in the data exposed to the client. A message will appear confirming the new item was added to the list.
+- Clicking the "ADD NEW ITEM" button will add a new generic item to the list, both in the server-side data set and in the data exposed to the client. A message will appear confirming the new item was added to the list, referencing the unique, incremental ID number of the new item.
 
 - Because the database transaction is being simulated by `app/services/mock-data.server.ts` the list will be cleared when stopping the web server.
 
 ## Remix Docs References
+
+[Remix Tutorial: Data Mutations](https://remix.run/docs/en/main/start/tutorial#data-mutations)
 
 [Remix Tutorial: Creating Contacts](https://remix.run/docs/en/main/start/tutorial#creating-contacts)

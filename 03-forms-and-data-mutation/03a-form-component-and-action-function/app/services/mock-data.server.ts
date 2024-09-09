@@ -1,16 +1,37 @@
-const allListItems: ListItem[] = []
+const listItemData: ListItemData = {
+  lastId: 0,
+  byId: {},
+  getAll() {
+    return Object.entries(this.byId).map(([id, data]) => {
+      const { createdAt } = data
+      return { id, createdAt }
+    })
+  },
+  createOne() {
+    this.byId[++this.lastId] = {
+      createdAt: new Date().toLocaleString(),
+    }
+    return this.lastId
+  },
+}
 
 export async function getAllListItems() {
-  return allListItems
+  return listItemData.getAll()
 }
 
 export async function createListItem() {
-  const newListItem = {
-    id: `${allListItems.length + 1}`,
-    createdAt: new Date().toLocaleString(),
+  return listItemData.createOne()
+}
+
+export interface ListItemData {
+  lastId: number
+  byId: {
+    [key: string]: {
+      createdAt: string
+    }
   }
-  allListItems.push(newListItem)
-  return newListItem
+  getAll: Function
+  createOne: Function
 }
 
 export interface ListItem {
