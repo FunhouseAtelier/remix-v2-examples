@@ -1,13 +1,12 @@
-/* 1. Import the type declaration for the `loader` function arguments. */
 import type { LoaderFunctionArgs } from '@remix-run/node'
-/* 2. Import the Remix `json` utility function. */
+/* 1. Import the Remix `json` utility function. */
 import { json } from '@remix-run/node'
-/* 3. Import the Remix `useLoaderData` hook. */
+/* 2. Import the Remix `useLoaderData` hook. */
 import { useLoaderData } from '@remix-run/react'
-/* 4. Import a server function that will get the data. */
+/* 3. Import a server function that will get the data. */
 import { getUser } from '~/services/mock-data.server'
 
-/* 5. Export a `loader` asynchronous function that will fetch the data from the server, based on the `userId` in the URL, then expose that data to the client. */
+/* 4. Export a `loader` asynchronous function that will fetch the data from the server, based on the `userId` in the URL, then expose that data to the client. */
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { userId } = params
   /* If no userId was found in the URL params, send a "400 Bad Request" response to the client. */
@@ -29,9 +28,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   return json({ user })
 }
 
-/* 6. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/<ANY_VALID_STRING>` route. */
+/* 5. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/<ANY_VALID_STRING>` route. */
 export default function MessageHistory() {
-  /* 7. In the React function component assign the exposed data to a variable with the `useLoaderData` hook. */
+  /* 6. In the React function component assign the exposed data to a variable with the `useLoaderData` hook. */
   const { user } = useLoaderData<typeof loader>()
 
   return (

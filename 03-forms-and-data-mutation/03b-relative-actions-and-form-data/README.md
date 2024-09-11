@@ -44,26 +44,20 @@ export default function Index() {
 
 ### Create `app/routes/demo.$listItemId.edit.tsx`
 
-1. Import the type declarations for the `loader` and `action` function arguments.
-
-```tsx
-import type { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node'
-```
-
-2. Import the Remix `json` and `redirect` utility functions, `<Form>` component, and `useLoaderData` hook.
+1. Import the Remix `json` and `redirect` utility functions, `<Form>` component, and `useLoaderData` hook.
 
 ```tsx
 import { json, redirect } from '@remix-run/node'
 import { Form, useLoaderData } from '@remix-run/react'
 ```
 
-3. Import the server functions to get and update list item.
+2. Import the server functions to get and update list item.
 
 ```tsx
 import { getListItem, updateListItem } from '~/services/mock-data.server'
 ```
 
-4. Export a `loader` function that uses the ID found in the dynamic route segment of the URL to get the data for that list item and expose it to the client. If no ID was found in the URL or no list item was returned by `getListItem()` throw an error response.
+3. Export a `loader` function that uses the ID found in the dynamic route segment of the URL to get the data for that list item and expose it to the client. If no ID was found in the URL or no list item was returned by `getListItem()` throw an error response.
 
 ```tsx
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -85,7 +79,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 }
 ```
 
-5. Export an `action` function that uses the form data to update the item with an ID that matches the dynamic segment in the URL then redirect to the `/demo` route to see the update and display the "ADD NEW ITEM" button again. If no ID was found in the URL throw an error response.
+4. Export an `action` function that uses the form data to update the item with an ID that matches the dynamic segment in the URL then redirect to the `/demo` route to see the update and display the "ADD NEW ITEM" button again. If no ID was found in the URL throw an error response.
 
 ```tsx
 export const action = async ({ params, request }: ActionFunctionArgs) => {
@@ -102,7 +96,7 @@ export const action = async ({ params, request }: ActionFunctionArgs) => {
   throw redirect('/demo')
 ```
 
-6. Export, as the default, a React function component that returns the `<Form>` component used to update a list item, and assigns the current list item data to the form at first render with the `useLoaderData` hook and the `defaultValue` prop.
+5. Export, as the default, a React function component that returns the `<Form>` component used to update a list item, and assigns the current list item data to the form at first render with the `useLoaderData` hook and the `defaultValue` prop.
 
 ```tsx
 export default function Index() {
@@ -158,6 +152,8 @@ export default function Index() {
 - Relative actions allow a Remix `<Form>` component to make a POST request to any other route, where the request will be handled by the `action` function at the other route.
 
 - The route in the `action` attribute of the `<Form>` component should contain the route path relative to the route where the `<Form>` component is rendered, unlike when using the `redirect` utility function, where the path is always relative to the base URL of the app.
+
+- The `formData` returned by `await request.formData()` after it resolves is an instance of the standard Web API `FormData` class, so data from the form can be extracted atomically with the syntax `formData.get('<INPUT_NAME>')` where `<INPUT_NAME>` is a string that matches the `name` attribute value of the associated `<input>` element(s). In this example `Object.fromEntries(formData)` is used to convert the data to an object containing key-value pairs where the keys are the input names. Using that technique allows for adding more inputs to the field without the need to extract the values atomically; they can all be passed as one object to the update function on the server.
 
 ## Expected Behavior
 

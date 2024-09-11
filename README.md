@@ -16,7 +16,9 @@ The examples in this repository all follow a common pattern, with the following 
 
 - Show the complete result of following all steps in the example project code, and include comments in the files to call out where each step can be found in the code, to make it clear how to replicate each technique in another Remix project.
 
-- Include additional code for basic demonstration of the techniques, including hyperlinks, buttons, dynamic displays, and mock data sets. These are not an essential part of the step-by-step replication process.
+- Include additional code for basic demonstration of the techniques, including hyperlinks, buttons, dynamic displays, and mock data sets. These are usually not an essential part of the step-by-step replication process, so they will not be explained, only included in the example code.
+
+- All examples are written in TypeScript, but TypeScript is beyond the scope of these example, so those parts will not be explained, only included in the example code.
 
 - After the step-by-step instructions in the `README.md` files, include some notes of information that is good to know about the techniques and a description of the expected behavior of the basic demonstrations. For a more thorough explanation of the techniques and their options, there will be references to [the official Remix Docs](https://remix.run/docs/en/main).
 
@@ -89,6 +91,10 @@ How to use relative actions to have a Remix `<Form>` component that posts to a d
 The demo shows how to handle the creation of new records and updating existing records, using nested routes to switch between forms in the same parent layout.
 
 #### 03c. Forms Without Navigation and Optimistic UI
+
+How to use the Remix `useFetcher` and `useFetchers` hooks to submit forms to an action function on the same route and, in case of slow connection speed, show the expected result immediately so the user isn't left wondering if their click had any effect.
+
+The demo includes a list item that cannot be modified, to simulate a situation when the item could not be updated in the datastore, and it has toggle buttons to show how behavior differs when forms without navigation and/or optimistic UI are not used.
 
 ### 04. Search Functionality
 

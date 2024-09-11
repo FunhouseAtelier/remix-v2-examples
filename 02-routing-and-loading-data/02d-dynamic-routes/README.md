@@ -23,31 +23,25 @@ export default function Index() {
 
 ### Create `app/routes/demo.$userId.tsx`
 
-1. Import the type declaration for the `loader` function arguments.
-
-```tsx
-import type { LoaderFunctionArgs } from '@remix-run/node'
-```
-
-2. Import the Remix `json` utility function.
+1. Import the Remix `json` utility function.
 
 ```tsx
 import { json } from '@remix-run/node'
 ```
 
-3. Import the Remix `useLoaderData` hook.
+2. Import the Remix `useLoaderData` hook.
 
 ```tsx
 import { useLoaderData } from '@remix-run/react'
 ```
 
-4. Import a server function that will get the data.
+3. Import a server function that will get the data.
 
 ```tsx
 import { getUser } from '~/services/mock-data.server'
 ```
 
-5. Export a `loader` asynchronous function that will fetch the data from the server, based on the `userId` in the URL, then expose that data to the client.
+4. Export a `loader` asynchronous function that will fetch the data from the server, based on the `userId` in the URL, then expose that data to the client.
 
 ```tsx
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -72,7 +66,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 }
 ```
 
-6. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/<ANY_VALID_STRING>` route.
+5. Export, as the default, a React function component that will be rendered in place of the `<Outlet />` component when navigating to the `/demo/<ANY_VALID_STRING>` route.
 
 ```tsx
 export default function MessageHistory() {
@@ -85,7 +79,7 @@ export default function MessageHistory() {
 }
 ```
 
-5. In the React function component assign the data exposed by the `loader` function to a varible with the `useLoaderData` hook.
+6. In the React function component assign the data exposed by the `loader` function to a varible with the `useLoaderData` hook.
 
 ```tsx
 const { user } = useLoaderData<typeof loader>()
