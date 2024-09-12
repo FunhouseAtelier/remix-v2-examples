@@ -98,13 +98,9 @@ The demo includes a list item that cannot be modified, to simulate a situation w
 
 ### 04. Search Functionality
 
-- `URLSearchParams` and `GET` Submissions
-- Synchronizing URLs to Form State
-- Submitting `Form`'s `onChange`
-- Adding Search Spinner
-- Managing the History Stack
+#### 04a. `URLSearchParams` and `GET` Submissions
 
-Mock-up: Giggle Search
+#### 04b. Submitting On Change and Debouncing
 
 ### 05. `<head>` Child Components
 

@@ -22,9 +22,6 @@ export default function AltDemo({
       <h1 className="text-3xl">
         Forms Without Navigation and Optimistic UI (demo)
       </h1>
-      <h2 className="my-6 text-2xl text-center px-2 py-1 border-2 border-solid border-yellow-500 rounded-lg">
-        CartPartner: Your Little Shopping Buddy
-      </h2>
       <div className="my-4">
         <button
           className="mr-4 py-1 px-2 bg-violet-400 rounded-lg"
@@ -51,6 +48,9 @@ export default function AltDemo({
           <span className="font-bold">{isOptimisticUiOn ? 'ON' : 'OFF'}</span>
         </span>
       </div>
+      <h2 className="my-6 text-2xl text-center px-2 py-1 border-2 border-solid border-yellow-500 rounded-lg">
+        CartPartner: Your Little Shopping Buddy
+      </h2>
       <Outlet />
       <h3 className="my-4 text-xl">Shopping List:</h3>
       <ol className="my-4">
