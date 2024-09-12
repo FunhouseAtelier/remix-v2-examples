@@ -28,18 +28,30 @@ body {
 
 ### Edit `app/root.tsx`
 
-1. Import the `href` value of the app-wide stylesheet from the CSS file with `?url` appended at the end.
+1. Note that the Remix `<Links />` component was imported.
+
+```tsx
+import { Links } from '@remix-run/react'
+```
+
+2. Import the `href` value of the app-wide stylesheet from the CSS file with `?url` appended at the end.
 
 ```tsx
 import appStylesHref from '~/styles/app.css?url'
 ```
 
-2. Export a `links` function that returns and array of objects where each object represents a `<link>` element to add as a child of the `<head>` element of every route in the app. The object's key-value pairs represent the attribute-value pairs of the HTML element.
+3. Export a `links` function that returns and array of objects where each object represents a `<link>` element to add as a child of the `<head>` element of every route in the app, wherever the `<Links />` component is placed. The objects key-value pairs represent the attribute-value pairs of the HTML element.
 
 ```tsx
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: appStylesHref },
 ]
+```
+
+4. Note that the Remix `<Links />` component was added as a child of the `<head>` element.
+
+```tsx
+<Links />
 ```
 
 ### Create `app/routes/home.tsx`

@@ -1,63 +1,70 @@
-# 02a. `loader` and `redirect` Functions
+#### 05b. Adding Metadata with `meta`
 
 ## Starting Point
 
-1. Replicate the result from **01a. Installing and Running Remix v2 With `npx`**.
+1. Replicate the result from **02a. `loader` and `redirect` Functions**.
 
 ## Process
 
-### Create `app/routes/demo.tsx`
+### View `app/root.tsx`
 
-1. Export, as the default, a React function component that returns some boilerplate TSX code to indicate the route being viewed.
+1. Note that the Remix `<Meta />` component was imported.
 
 ```tsx
-export default function Demo() {
-  return (
-    <main className="p-4">
-      <h1 className="text-3xl">Loader and Redirect Functions (demo)</h1>
-    </main>
-  )
+import { Meta } from '@remix-run/react'
+```
+
+2. Note that a `meta` function was exported, with a return value that is an array of objects where each object represents a `<meta>` or `<title>` element to add as a child of the `<head>` element, wherever the `<Meta />` component is placed. The objects key-value pairs represent the attribute-value pairs of the HTML element.
+
+```tsx
+export const meta: MetaFunction = () => {
+  return [{ title: 'Adding Metadata with meta' }]
 }
 ```
 
-### Edit `app/routes/_index.tsx`
-
-1. Remove all of the boilerplate code.
-
-2. Import the Remix `redirect` utility function.
+3. Note that some `<meta>` tags were added as children of the `<head>` element without using the Remix `meta` function.
 
 ```tsx
-import { redirect } from '@remix-run/node'
+<meta charSet="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 ```
 
-3. Export a `loader` asynchronous function that returns the `redirect` function with a string argument that matches the relative URL of the route handled by `app/routes/demo.tsx`.
+4. Note that the Remix `<Meta />` component was added as a child of the `<head>` element.
 
 ```tsx
-export const loader = async () => {
-  throw redirect('/demo')
+<Meta />
+```
+
+### Edit `app/routes/demo.tsx`
+
+1. Export a `meta` function including data to create a new meta element with only a description.
+
+```tsx
+export const meta: MetaFunction = () => {
+  return [{ description: 'This is a demonstration page' }]
 }
 ```
 
-4. Rename the file as `app/routes/_index.ts`
+### Create `app/routes/home.tsx`
+
+1. Export a `meta` function including data to create a new meta element with a title and a description.
+
+```tsx
+export const meta: MetaFunction = () => {
+  return [{ title: 'Home' }, { description: 'This is a stubbed-out home page' }]
+}
+```
 
 ## Notes
 
-- This redirect to a `/demo` route is a starting point for many of the examples in this repository, because in some cases the demonstration includes nested routing, which is not possible in an `_index.tsx` file, and in any case when showing examples it is best not to clutter the `app/root.tsx` file with the demonstration code, but rather to put that code in its own route. The redirect to the `/demo` route then serves as a convenience, so that there is no `/` (root) route you might load first and then need to navigate to the `/demo` route.
-
-- The export of a `meta` function was removed from `app/routes/_index.tsx` because the route now only redirects to another route, thus the `meta` code was moved into the `app/root.tsx` file. This technique is covered in the **05. `<head>` Child Components** section.
-
-- The `app/routes/_index.tsx` file is renamed to `app/routes/_index.ts` because a `*.tsx` file is expected to export, as the default, a React function component. Now that it only exports a `loader` function that redirects to another route it is considered a resource route, and the appropriate filename extension is `*.ts`. In practice it would still work flawlessly as a `*.tsx` file, but renaming it is the correct procedure.
-
-- When requesting to view the base URL of the web app, first the `app/root.tsx` file is loaded as the global layout for the entire app, then it attempts to render `app/routes/_index.ts` in an `<Outlet />` component. That calls the `loader` function exported by `app/routes/_index.ts` before any more data is sent to the client, and the result is to redirect to another route. This repeats the loading process, starting with `app/root.tsx`, but this time the `<Outlet />` component attempts to render `app/routes/demo.tsx` and this succeeds because it is not interrupted by a `loader` function and there is a default export in `app/routes/demo.tsx` that is a React function component. The `<Outlet />` component is covered in **02c. Nested Static Routes**.
-
-- The `loader` function runs only on the server, so it is safe to include and use secret information within this function. It could also contain conditional logic to redirect only in some circumstances, such as the user is not authenticated or authorized, but otherwise render a React function component. The conditional logic could also be used to redirect to one of multiple routes, maybe based on whether the user is identified as a guest (not authenticated), a customer, or an employee.
-
-- In this example `return redirect('/demo')` would achieve the same result, but `throw redirect('/demo')` has two advantages: 1. It will break out of any call stack, so the redirect can be done within a nested function. 2. It makes it clear that a redirect works by throwing an error, thus it might not work as expected within a try/catch block.
+- Unlike `links` functions, the elements created by `meta` functions entirely override any created by parent rout segments, they do not merge together. This is why some `<meta>` elements are manually added to the `<head>` element in `app/root.tsx`, to ensure that they will be applied app-wide and never overridden.
 
 ## Expected Behavior
 
-- When navigating the the base URL of the web app (usually `http://localhost:5173` in development) you should be immediately redirected to the `/demo` route. There is no page or React component to be seen at the base URL.
+- Navigating to the `/demo` route will show a page with no title. Even though a title is exported from the `meta` function in `app/root.tsx`, it is overriden by the export from the `meta` function in `app/routes/demo.tsx`, which only exports a description.
+
+- Navigating to the `/home` route will show a page with the title of "Home", according to the `meta` function exported from `app/routes/home.tsx`.
 
 ## Remix Docs References
 
-[Remix Tutorial: Mutation Discussion](https://remix.run/docs/en/main/start/tutorial#mutation-discussion) (Scroll down to the paragraph that begins with "`action` and `loader` functions can both...")
+[Route Module: meta](https://remix.run/docs/en/main/route/meta)
