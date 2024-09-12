@@ -114,7 +114,15 @@ The demo shows the results of typing a search term in an input and seeing search
 
 #### 05a. Adding Stylesheets with `links`
 
+How to add stylesheets globally or specifically to one route.
+
+The demo shows how styles in child route segments will merge with and may override styles in parent route segments.
+
 #### 05b. Adding Metadata with `meta`
+
+How to add HTML metadata and titles globally or specifically to one route.
+
+The demo shows how metadata in child route segments will not merge with and will override metadata in parent route segments.
 
 ### 06. Deployment
 
