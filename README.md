@@ -100,12 +100,20 @@ The demo includes a list item that cannot be modified, to simulate a situation w
 
 #### 04a. `URLSearchParams` and `GET` Submissions
 
+How to use a Remix `<Form>` component make a `GET` request to a route when it is submitted, then use the `loader` function in that route to extract the search term from the URL parameters, and get some data that matches the search term, then expose that data and the search term (for convenience) to the client.
+
+The demo shows the results of searching a hard-coded list of English words for any exact matches with the search string, divided into categories of words that start with the search term and words that contain the search term.
+
 #### 04b. Submitting On Change and Debouncing
+
+How to have search results automatically appear while typing in the search input by submitting the form whenever it is changed, but only after a half-second delay in being changed (debouncing) to reasonably limit the number of requests being sent to the server and avoid cluttering the browser history with a navigation for every keystroke.
+
+The demo shows the results of typing a search term in an input and seeing search results shortly after they stop typing, without the need to click a submit button or press the `Enter` key.
 
 ### 05. `<head>` Child Components
 
-- adding meta tags with `Meta`
 - adding stylesheets with `Links`
+- adding meta tags with `Meta`
 
 ### 06. Deployment
 

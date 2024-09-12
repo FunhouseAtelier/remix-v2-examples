@@ -71,8 +71,6 @@ useEffect(() => {
 
 - The `submit.bind()` syntax is necessary to define a function for `setTimeout` to run after the half-second delay and pass it the `event` captured within the handler function. A simple `() => submit(event.currentTarget)` would not preserve the `event` at the time `setTimeout` calls the function.
 
-- The Remix Tutorial uses `{ replace: !isFirstSearch }`
-
 ## Remix Docs References
 
 [Remix Tutorial: Submitting Form's onChange](https://remix.run/docs/en/main/start/tutorial#submitting-forms-onchange)
