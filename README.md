@@ -112,8 +112,9 @@ The demo shows the results of typing a search term in an input and seeing search
 
 ### 05. `<head>` Child Components
 
-- adding stylesheets with `Links`
-- adding meta tags with `Meta`
+#### 05a. Adding Stylesheets with `links`
+
+#### 05b. Adding Metadata with `meta`
 
 ### 06. Deployment
 
