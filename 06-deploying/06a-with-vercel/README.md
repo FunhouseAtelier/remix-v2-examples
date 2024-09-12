@@ -10,11 +10,11 @@
 
 1. Navigate to [https://vercel.com/new](https://vercel.com/new). If you have already signed up for Vercel, linked your GitHub account, and allowed access to a list of repositories, then skip steps 2 & 3.
 
-2. Click the "Continue with GitHub" button and confirm to GitHub that you want to link your account to Vercel.
+2. Click the "Continue with GitHub" button and confirm that you want to link your GitHub account to Vercel. If you have not yet signed up for Vercel, this will create a new Vercel account for you, on the free "Hobby" plan.
 
 ![Step 2 Illustration](images/step-2.png)
 
-3. Click the "Install" button to allow Vercel access to a list of some or all of your GitHub repositories.
+3. Click the "Install" button to allow Vercel access to a list of some or all of your GitHub repositories, as you choose.
 
 ![Step 3 Illustration](images/step-3.png)
 
@@ -22,7 +22,7 @@
 
 ![Step 4 Illustration](images/step-4.png)
 
-5. Review the project configuration information and make any adjusments you want before initial deployment. Vercel should automatically recognize your repo as a Remix app, and that will be shown as the "Framework Preset". If you have environment variables for secrets that are not included in the repo, you can add them now by expanding the "> Environment Variables" and enterting the key value pairs. You can also select the entire contents of your envars file, like `.env`, and Vercel will automatically parse the text into the form fields for you.
+5. Review the project configuration information and make any adjusments you want before initial deployment. Vercel should automatically recognize your repo as a Remix app, and that will be shown as the "Framework Preset". If you have environment variables for secrets that are not included in the repo, you can add them now by expanding the "> Environment Variables" and enterting the key value pairs. You can also copy the entire contents of your envars file, like `.env`, and paste it into the first form field, then Vercel will automatically parse the text and correctly enter all envars into the form fields for you.
 
 ![Step 5 Illustration](images/step-5.png)
 
@@ -38,11 +38,11 @@
 
 ## Notes
 
-- As of Remix v2, the official Remix Docs state that Vercel compatibility works "out of the box" and requires no special configuration or extra imports, however Vercel recommends using some of their custom Remix packages in place of or in addition to what Remix v2 uses out of the box. This author has not tested the differences in functionality when using the Vercel recommended techniques, but keep in mind that these may solve issues not addressed in this guide and the **Vercel Docs References** link below points to Vercel's recommended techniques for deploying Remix apps on their platform.
+- As of Remix v2, the official Remix Docs state that Vercel compatibility works "out of the box" and requires no special configuration or extra imports, however Vercel recommends using some of their custom Remix packages in place of or in addition to what Remix v2 uses out of the box. This author has not tested the differences in functionality when using the Vercel recommended techniques, but keep in mind that these may solve issues not addressed in this guide, The **Vercel Docs References** link below points to Vercel's recommended techniques for preparing Remix apps for deployment on their platform.
 
 ## Expected Behavior
 
-- Vercel will automatically rebuild the app whenever you sync new changes to the associated GitHub repository. If your changes do not appear to be applied, visit the dashboard page for your app and check the "Status" information. If it is not "\[green dot] Ready", check the Build Logs for more information (see: step 8 image).
+- Vercel will automatically rebuild the app whenever you sync new changes to the associated GitHub repository. If your changes do not appear to be applied after a few minutes, visit the dashboard page for your app and check the "Status" information. If it is not "\[green dot] Ready", check the "Build Logs" for more information (see: step 8 image).
 
 ## Remix Docs References
 

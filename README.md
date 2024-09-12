@@ -126,7 +126,7 @@ The demo shows how metadata in child route segments will not merge with and will
 
 ### 06. Deploying
 
-#### With Vercel
+#### 06a. With Vercel
 
 ### 07. Database Integration
 
