@@ -124,7 +124,7 @@ How to add HTML metadata and titles globally or specifically to one route.
 
 The demo shows how metadata in child route segments will not merge with and will override metadata in parent route segments.
 
-### 06. Deployment
+### 06. Deploying
 
 #### With Vercel
 
@@ -132,7 +132,7 @@ The demo shows how metadata in child route segments will not merge with and will
 
 #### With Prisma
 
-##### With MongoDB
+##### And MongoDB
 
 ### 08. User Auth
 
