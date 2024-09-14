@@ -1,6 +1,8 @@
 # 01a. Installing and Running Remix v2 With `npx`
 
-## Installing
+## Process
+
+### Installing
 
 1. Open a terminal in the location where you want the project root folder to be created.
 
@@ -18,9 +20,15 @@ npx create-remix@2
 
 6. Choose whether to install dependencies with npm.
 
-## Running
+7. If you receive warnings about npm package vulnerabilies, enter the terminal command to fix them.
 
-### Development Environment
+```bash
+npx audit fix
+```
+
+### Running
+
+#### Development Environment
 
 1. Open a terminal in the project root folder.
 
@@ -30,7 +38,7 @@ npx create-remix@2
 npm run dev
 ```
 
-### Production Environment
+#### Production Environment
 
 1. Open a terminal in the project root folder.
 

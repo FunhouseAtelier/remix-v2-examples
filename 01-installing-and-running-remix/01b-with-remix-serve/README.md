@@ -1,6 +1,8 @@
 # 01b. Installing and Running Remix v2 With `remix-serve`
 
-## Installing
+## Process
+
+### Installing
 
 1. Open a terminal in the location where you want the project root folder to be created.
 
@@ -24,7 +26,13 @@ npm i @remix-run/node @remix-run/react @remix-run/serve isbot@4 react react-dom
 npm i -D @remix-run/dev vite
 ```
 
-5. Create a `vite.config.js` file and add the boilerplate code.
+5. If you receive warnings about npm package vulnerabilies, enter the terminal command to fix them.
+
+```bash
+npx audit fix
+```
+
+6. Create a `vite.config.js` file and add the boilerplate code.
 
 ```js
 import { vitePlugin as remix } from '@remix-run/dev'
@@ -35,9 +43,9 @@ export default defineConfig({
 })
 ```
 
-6. Create an `app` folder.
+7. Create an `app` folder.
 
-7. Create an `app/root.jsx` file and add the boilerplate code.
+8. Create an `app/root.jsx` file and add the boilerplate code.
 
 ```jsx
 import { Links, Meta, Outlet, Scripts } from '@remix-run/react'
@@ -61,7 +69,7 @@ export default function App() {
 }
 ```
 
-8. In the `package.json` file merge the entry to specify that the app treats JavaScript files as modules.
+9. In the `package.json` file merge the entry to specify that the app treats JavaScript files as modules.
 
 ```json
 {
@@ -69,13 +77,13 @@ export default function App() {
 }
 ```
 
-9. (OPTIONAL) Enter the terminal command to reveal the server and browser entry point files.
+10. (OPTIONAL) Enter the terminal command to reveal the server and browser entry point files.
 
 ```bash
 npx remix reveal
 ```
 
-10. (OPTIONAL) If you will create a git repository for this project, create a `.gitignore` file and add the boilerplate code.
+11. (OPTIONAL) If you will create a git repository for this project, create a `.gitignore` file and add the boilerplate code.
 
 ```
 node_modules
@@ -85,9 +93,9 @@ node_modules
 .env
 ```
 
-## Running
+### Running
 
-### Development Environment
+#### Development Environment
 
 1. In the `package.json` file merge the entry to run the app in development mode.
 
@@ -107,7 +115,7 @@ node_modules
 npm run dev
 ```
 
-### Production Environment
+#### Production Environment
 
 1. In the `package.json` file merge the entries to build and run the app in production mode.
 

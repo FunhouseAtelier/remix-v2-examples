@@ -128,19 +128,39 @@ The demo shows how metadata in child route segments will not merge with and will
 
 #### 06a. With Vercel
 
+How to deploy a standard Remix app on the Vercel web-hosting platform. No example code is included, only a step-by-step guide with screenshots.
+
 ### 07. Database Integration
 
-#### With Prisma
+#### 07-01. With Prisma
 
-##### And MongoDB
+##### 07-01-01. Installing Prisma
+
+###### 07-01-01a. For a Local SQLite Database
+
+starting point: 01a
+
+###### 07-01-01b. For a MongoDB Atlas Database
+
+starting point: 01a
+
+###### 07-01-01c. For a Vercel Postgres Database
+
+starting point: 01a
+
+##### 07-01-02. Configuring Prisma
+
+categories
+
+===
 
 ### 08. User Auth
 
-#### From Scratch
+#### 08a. From Scratch
 
-#### With Remix Auth
+#### 08b. With Remix Auth
 
-#### With Clerk
+#### 08c. With Clerk
 
 ## Future Plans
 
