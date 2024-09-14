@@ -148,28 +148,32 @@ How to install Prisma and configure it to use a MongoDB Atlas database.
 
 How to install Prisma and configure it to use a Vercel Postgres database.
 
-##### 07-01-02. Configuring Prisma in Remix
+##### 07-01-02. Configuring Prisma in Remix (COMING SOON)
 
 \[categories]
 
+##### 07-01-??. Deployment (COMING SOON)
+
+##### 07-01-??. With Vercel (COMING SOON)
+
+\[package.json build script to migrate and generate client]
+
 ===
 
-### 08. User Auth
+### 08. User Auth (COMING SOON)
 
-#### 08a. From Scratch
+#### 08a. From Scratch (COMING SOON)
 
-#### 08b. With Remix Auth
+#### 08b. With Remix Auth (COMING SOON)
 
-#### 08c. With Clerk
+#### 08c. With Clerk (COMING SOON)
 
-## Future Plans
+## Modals (FUTURE PLAN)
 
-### Modals
+## Error Handling (FUTURE PLAN)
 
-### Error Handling
+## Asset Delivery (FUTURE PLAN)
 
-### Asset Delivery
+### With Cloudinary (FUTURE PLAN)
 
-#### With Cloudinary
-
-#### With a blob-store
+### With a blob-store (FUTURE PLAN)
