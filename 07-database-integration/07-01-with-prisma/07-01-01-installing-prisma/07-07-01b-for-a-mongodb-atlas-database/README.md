@@ -82,10 +82,10 @@ npx prisma db push
 
 - Installing the Prisma client will allow you to import it into your app code.
 
-- Initializing Prisma will create a boilerplate `prisma/schema.prisma` file, configured for the kind of database specified by the `--datasource-provider` flag. If the flag is omitted, the default `postgres` will be used. Initializing will also create or merge a `DATABASE_URL` environment variable in the `.env` file, and by default it refers to a sample MongoDB connection URL.
+- Initializing Prisma will create a boilerplate `prisma/schema.prisma` file, configured for the kind of database specified by the `--datasource-provider` flag. If the flag is omitted, the default `postgresql` will be used. Initializing will also create or merge a `DATABASE_URL` environment variable in the `.env` file, and by default it refers to a sample MongoDB connection URL.
 
 - Running the `npx prisma db push` terminal command will create the `User` and `Post` collections in the MongoDB database, if they do not already exist, then set the database schema to match what is definied in `prisma/schema.prisma`, and finally regenerate the Prisma client to match the database schema.
 
 ## Prisma Docs References
 
-[Get Started: Set up Prisma ORM: Add to existing project: MongoDB](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/mongodb-typescript-mongodb)
+[Add to existing project: MongoDB](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/mongodb-typescript-mongodb)

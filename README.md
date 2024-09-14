@@ -146,9 +146,9 @@ How to install Prisma and configure it to use a MongoDB Atlas database.
 
 ###### 07-01-01c. For a Vercel Postgres Database
 
-\[incomplete]
+How to install Prisma and configure it to use a Vercel Postgres database.
 
-##### 07-01-02. Configuring Prisma
+##### 07-01-02. Configuring Prisma in Remix
 
 \[categories]
 

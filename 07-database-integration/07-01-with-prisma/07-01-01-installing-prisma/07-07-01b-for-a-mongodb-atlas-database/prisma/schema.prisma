@@ -13,6 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// 1. Add `User` and `Post` data models, where `User` has a one-to-many relation with `Post` as the `author`.
 model User {
   id    String  @id @default(auto()) @map("_id") @db.ObjectId
   email String  @unique
