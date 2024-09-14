@@ -154,7 +154,7 @@ How to install Prisma and configure it to use a Vercel Postgres database.
 
 ##### 07-01-??. Deployment (COMING SOON)
 
-##### 07-01-??. With Vercel (COMING SOON)
+###### 07-01-??a. With Vercel (COMING SOON)
 
 \[package.json build script to migrate and generate client]
 
