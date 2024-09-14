@@ -68,9 +68,9 @@ npx prisma db push
 
 ## Notes
 
-- This example shows how to install Prisma for a new MongoDB Atlas database, but it can also be done for an existing MongoDB database. In that case you should skip the \*\*Edit `prisma/schema.prisma` section, and instead of the `npx prisma db push` terminal command, use `npx prisma db pull` command to do the inverse: force the prisma schema to match the schema infered by the structure of the existing database. This will also generate a new Prisma client.
+- This example shows how to install Prisma for a new MongoDB Atlas database, but it can also be done for an existing MongoDB database. In that case you should skip the **Edit `prisma/schema.prisma`** section, and instead of the `npx prisma db push` terminal command, use `npx prisma db pull` command to do the inverse: force the prisma schema to match the schema infered by the structure of the existing database. This will also generate a new Prisma client.
 
-- A new database must be created for the purpose of following these Funhouse Atelier examples of database integration in Remix, and except for the "Installing" examples they will all follow a similar pattern, because Prisma standardizes the syntax used to transact with different kinds of databases. Where there are differences in the syntax between database types in the following examples, they will be noted in the step-by-step instructions, but otherwise they are the same.
+- A new database must be created for the purpose of following these Funhouse Atelier examples of database integration in Remix, and except for the "Installing" examples they will all follow a similar pattern, because Prisma standardizes the syntax used to transact with different kinds of databases. Where there are differences in the syntax between database types in the following examples, they will be noted in the instructions, but otherwise they are implied to be the same.
 
 - The `npx prisma db push` terminal command automatically generates a new Prisma client, which will be used as a database adapter in your app code, based on the schema defined in `prisma/schema.prisma`.
 

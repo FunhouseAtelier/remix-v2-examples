@@ -60,11 +60,11 @@ npx prisma migrate dev --name init
 
 - Using an SQLite database is generally not recommended for the production environment, but it is useful for quick prototyping of an app.
 
-- The `--name init` part of the database migration terminal command is used to give a descriptive name to the migration, much like you would name a git commit. Prisma tracks all migration operations in the `prisma/migrations` folder to make it clear what changes were made to the database each time.
+- The `--name init` part of the database migration terminal command is optional and used to give a descriptive name to the migration, much like you would name a git commit. Prisma tracks all migration operations in the `prisma/migrations` folder to make it clear what changes were made to the database each time.
 
-- The `npx prisma migrate` terminal command is followed by `dev` to indicate the name of the SQLite database file to migrate, and the command automatically generates a new Prisma client, which will be used as a database adapter in your app code, based on the schema defined in `prisma/schema.prisma`.
+- The `npx prisma migrate dev` automatically generates a new Prisma client for the development environment, which will be used as a database adapter in your app code, based on the schema defined in `prisma/schema.prisma`.
 
-- Prisma standardizes the syntax used to transact with different kinds of databases, so most of the following examples will work the same way regardless of which type of database is used, but where there are differences in the syntax between database types they will be noted in the step-by-step instructions, but otherwise they are the same.
+- Prisma standardizes the syntax used to transact with different kinds of databases, so most of the following examples will work the same way regardless of which type of database is used, but where there are differences in the syntax between database types they will be noted in the instructions, but otherwise they are implied to be the same.
 
 ## Expected Behavior
 

@@ -148,13 +148,23 @@ How to install Prisma and configure it to use a MongoDB Atlas database.
 
 How to install Prisma and configure it to use a Vercel Postgres database.
 
-##### 07-01-02. Configuring Prisma in Remix (COMING SOON)
+##### 07-01-02. Instantiating the Prisma Client (COMING SOON)
 
-\[categories]
+###### 07-01-02a. In Long-running Applications (COMING SOON)
 
-##### 07-01-??. Deployment (COMING SOON)
+[PrismaClient in long-running applications](https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/databases-connections#prismaclient-in-long-running-applications)
 
-###### 07-01-??a. With Vercel (COMING SOON)
+###### 07-01-02b. In Serverless Environments (COMING SOON)
+
+[PrismaClient in serverless environments](https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/databases-connections#prismaclient-in-serverless-environments)
+
+###### 07-01-02c. With Vercel Postgres (COMING SOON)
+
+[Edge functions: Vercel Postgres](https://www.prisma.io/docs/orm/prisma-client/deployment/edge/deploy-to-vercel#vercel-postgres)
+
+##### 07-01-03. Deploying (COMING SOON)
+
+###### 07-01-03a. With Vercel (COMING SOON)
 
 \[package.json build script to migrate and generate client]
 
@@ -162,18 +172,30 @@ How to install Prisma and configure it to use a Vercel Postgres database.
 
 ### 08. User Auth (COMING SOON)
 
-#### 08a. From Scratch (COMING SOON)
+#### 08-01. From Scratch (COMING SOON)
 
-#### 08b. With Remix Auth (COMING SOON)
+[Remix Docs: Utilities: Sessions](https://remix.run/docs/en/main/utils/sessions)
 
-#### 08c. With Clerk (COMING SOON)
+#### 08-02. With Remix Auth (COMING SOON)
 
-## Modals (FUTURE PLAN)
+[GitHub: sergiodxa/remix-auth](https://github.com/sergiodxa/remix-auth)
 
-## Error Handling (FUTURE PLAN)
+#### 08-03. With Clerk (COMING SOON)
 
-## Asset Delivery (FUTURE PLAN)
+[Clerk Docs: Remix Quickstart](https://clerk.com/docs/quickstarts/remix)
 
-### With Cloudinary (FUTURE PLAN)
+#### 08-04. With Auth.js (FUTURE PLAN)
 
-### With a blob-store (FUTURE PLAN)
+### Modals (FUTURE PLAN)
+
+### Error Handling (FUTURE PLAN)
+
+### Asset Delivery (FUTURE PLAN)
+
+#### With Cloudinary (FUTURE PLAN)
+
+#### With a blob-store (FUTURE PLAN)
+
+### Data Validation (FUTURE PLAN)
+
+#### With Zod (FUTURE PLAN)

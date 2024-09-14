@@ -22,7 +22,7 @@ npm i -D prisma
 npm i @prisma/client @prisma/adapter-neon @neondatabase/serverless
 ```
 
-3. Enter the terminal command to initialize the Prisma ORM for a PostgrSQL database.
+3. Enter the terminal command to initialize the Prisma ORM for a PostgreSQL database.
 
 ```bash
 npx prisma init
@@ -104,11 +104,11 @@ npx prisma migrate dev --name init
 
 - Using a Vercel Postgres database is useful to leverage the platform's Edge Runtime features when performing database transactions, and to have the convenience of both your web server code and your database on the same hosting platform.
 
-- The `--name init` part of the database migration terminal command is used to give a descriptive name to the migration, much like you would name a git commit. Prisma tracks all migration operations in the `prisma/migrations` folder to make it clear what changes were made to the database each time. These changes will also be stored in a `_primsa_migrations` table of the database
+- The `--name init` part of the database migration terminal command is optional and used to give a descriptive name to the migration, much like you would name a git commit. Prisma tracks all migration operations in the `prisma/migrations` folder to make it clear what changes were made to the database each time. These changes will also be stored in a `_primsa_migrations` table of the database
 
-- The `npm prisma migrate` terminal command is followed by `dev` to indicate the name of the development database to migrate, and the command automatically generates a new Prisma client, which will be used as a database adapter in your app code, based on the schema defined in `prisma/schema.prisma`.
+- The `npm prisma migrate dev` terminal command automatically generates a new Prisma client for the development environment, which will be used as a database adapter in your app code, based on the schema defined in `prisma/schema.prisma`.
 
-- Using a Vercel Postgres database with Prisma requires additional configuration in the app code, beyond the scope of this example, and they will be noted in the step-by-step instructions, but otherwise the code will be the same as when using other database types, because Prisma standardizes the syntax used to transact with different kinds of databases.
+- Using a Vercel Postgres database with Prisma requires additional configuration in the app code, beyond the scope of this example, and they will be noted in the instructions, but otherwise the code is implied to be the same as when using other database types, because Prisma standardizes the syntax used to transact with different kinds of databases.
 
 ## Expected Behavior
 
