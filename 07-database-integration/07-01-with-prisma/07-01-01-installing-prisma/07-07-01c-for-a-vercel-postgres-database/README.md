@@ -1,4 +1,4 @@
-# 07-01-01a. Installing Prisma For a Local SQLite Database
+# 07-01-01c. Installing Prisma For a Vercel Postgres Database
 
 ## Starting Point
 
@@ -62,7 +62,7 @@ npx prisma migrate dev --name init
 
 - The `--name init` part of the database migration terminal command is used to give a descriptive name to the migration, much like you would name a git commit. Prisma tracks all migration operations in the `prisma/migrations` folder to make it clear what changes were made to the database each time.
 
-- The `npx prisma migrate` terminal command is followed by `dev` to indicate the name of the SQLite database file to migrate, and the command automatically generates a new Prisma client, which will be used as a database adapter in your app code, based on the schema defined in `prisma/schema.prisma`.
+- The `npm prisma migrate` terminal command is followed by `dev` to indicate the name of the SQLite database file to migrate, and the command automatically generates a new Prisma client, which will be used as a database adapter in your app code, based on the schema defined in `prisma/schema.prisma`.
 
 ## Expected Behavior
 

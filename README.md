@@ -138,19 +138,19 @@ How to deploy a standard Remix app on the Vercel web-hosting platform. No exampl
 
 ###### 07-01-01a. For a Local SQLite Database
 
-starting point: 01a
+How to install Prisma and configure it to use a local SQLite database.
 
 ###### 07-01-01b. For a MongoDB Atlas Database
 
-starting point: 01a
+How to install Prisma and configure it to use a MongoDB Atlas database.
 
 ###### 07-01-01c. For a Vercel Postgres Database
 
-starting point: 01a
+\[incomplete]
 
 ##### 07-01-02. Configuring Prisma
 
-categories
+\[categories]
 
 ===
 
