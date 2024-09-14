@@ -1,5 +1,5 @@
 {
-  "name": "07-07-01c-for-a-vercel-postgres-database",
+  "name": "07-01-02a-general-method",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -8,12 +8,9 @@
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc",
-    "postinstall": "prisma generate"
+    "typecheck": "tsc"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^0.9.5",
-    "@prisma/adapter-neon": "^5.19.1",
     "@prisma/client": "^5.19.1",
     "@remix-run/node": "^2.11.2",
     "@remix-run/react": "^2.11.2",

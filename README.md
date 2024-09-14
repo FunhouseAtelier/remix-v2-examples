@@ -148,19 +148,17 @@ How to install Prisma and configure it to use a MongoDB Atlas database.
 
 How to install Prisma and configure it to use a Vercel Postgres database.
 
-##### 07-01-02. Instantiating the Prisma Client (COMING SOON)
+##### 07-01-02. Instantiating the Prisma Client
 
-###### 07-01-02a. In Long-running Applications (COMING SOON)
+###### 07-01-02a. General Method
 
-[PrismaClient in long-running applications](https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/databases-connections#prismaclient-in-long-running-applications)
+How to instantiate the Prisma Client in Remix for most use cases, and avoid unbounded multiple instances from being created in a development environment.
 
-###### 07-01-02b. In Serverless Environments (COMING SOON)
+###### 07-01-02b. Vercel Postgres Method
 
-[PrismaClient in serverless environments](https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/databases-connections#prismaclient-in-serverless-environments)
+How to instantiate the Prisma Client in Remix when connecting to a Vercel Postgres database, and avoid unbounded multiple instances from being created in a development environment.
 
-###### 07-01-02c. With Vercel Postgres (COMING SOON)
-
-[Edge functions: Vercel Postgres](https://www.prisma.io/docs/orm/prisma-client/deployment/edge/deploy-to-vercel#vercel-postgres)
+_needs to be tested_
 
 ##### 07-01-03. Deploying (COMING SOON)
 
@@ -168,23 +166,19 @@ How to install Prisma and configure it to use a Vercel Postgres database.
 
 \[package.json build script to migrate and generate client]
 
-===
-
 ### 08. User Auth (COMING SOON)
 
-#### 08-01. From Scratch (COMING SOON)
-
-[Remix Docs: Utilities: Sessions](https://remix.run/docs/en/main/utils/sessions)
-
-#### 08-02. With Remix Auth (COMING SOON)
+#### 08-01. With Remix Auth (COMING SOON)
 
 [GitHub: sergiodxa/remix-auth](https://github.com/sergiodxa/remix-auth)
 
-#### 08-03. With Clerk (COMING SOON)
+#### 08-02. With Clerk (COMING SOON)
 
 [Clerk Docs: Remix Quickstart](https://clerk.com/docs/quickstarts/remix)
 
-#### 08-04. With Auth.js (FUTURE PLAN)
+#### 08-03. With Auth.js (FUTURE PLAN)
+
+[GitHub: Auth.js Pull Request](https://github.com/nextauthjs/next-auth/pull/6767)
 
 ### Modals (FUTURE PLAN)
 

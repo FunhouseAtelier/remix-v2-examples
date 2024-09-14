@@ -1,7 +1,7 @@
 import type { MetaFunction } from '@remix-run/node'
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'Installing Prisma For a Vercel Postgres Database' }]
+  return [{ title: 'Instantiating the Prisma Client: General Method' }]
 }
 
 export default function Index() {

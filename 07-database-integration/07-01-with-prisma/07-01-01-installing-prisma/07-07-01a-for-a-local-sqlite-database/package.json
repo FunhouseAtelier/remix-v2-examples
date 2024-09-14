@@ -1,5 +1,5 @@
 {
-  "name": "01a-with-npx",
+  "name": "07-07-01a-for-a-local-sqlite-database",
   "private": true,
   "sideEffects": false,
   "type": "module",
