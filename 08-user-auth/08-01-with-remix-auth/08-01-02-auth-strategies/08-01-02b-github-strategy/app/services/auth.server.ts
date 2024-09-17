@@ -1,4 +1,4 @@
-import type { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node'
+import type { LoaderFunctionArgs } from '@remix-run/node'
 import { Authenticator } from 'remix-auth'
 import { sessionStorage, getSession } from '~/services/session.server'
 
@@ -15,7 +15,6 @@ const gitHubStrategy = new GitHubStrategy(
     redirectURI: 'http://localhost:5173/auth/github/callback',
   },
   async ({ profile, tokens, request, context }) => {
-    console.log(profile)
     return { email: profile.emails[0].value }
   }
 )

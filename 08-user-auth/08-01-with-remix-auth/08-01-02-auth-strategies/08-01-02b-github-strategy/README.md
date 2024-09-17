@@ -43,7 +43,6 @@ const gitHubStrategy = new GitHubStrategy(
     redirectURI: 'http://localhost:5173/auth/github/callback',
   },
   async ({ profile, tokens, request, context }) => {
-    console.log(profile)
     return { email: profile.emails[0].value }
   }
 )
