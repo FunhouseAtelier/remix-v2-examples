@@ -3,7 +3,7 @@ import { Link } from '@remix-run/react'
 /* 1. Export, as the default, a React function component that will be rendered in its own layout when navigating to the `/demo/not-nested` route. */
 export default function NotNested() {
   return (
-    <main className="p-4">
+    <main className="p-4 max-w-[900px]">
       <h1 className="text-3xl">Nested Routes (demo)</h1>
       <div className="my-4">
         <Link className="text-xl text-blue-500 hover:underline" to="/demo">

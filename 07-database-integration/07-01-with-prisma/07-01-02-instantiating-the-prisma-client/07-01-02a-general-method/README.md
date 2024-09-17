@@ -19,7 +19,7 @@ _This example uses **07-01-01a.**_
 import { PrismaClient } from '@prisma/client'
 ```
 
-2. If an instance of `PrismaClient` is already attached to the `global` object, export it, otherwise export a new instance.
+2. If an instance of `PrismaClient` is already attached to the `global` object export it, otherwise export a new instance.
 
 ```ts
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient }

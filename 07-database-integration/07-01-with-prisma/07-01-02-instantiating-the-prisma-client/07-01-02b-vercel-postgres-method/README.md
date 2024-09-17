@@ -23,7 +23,7 @@ const neon = new Pool({ connectionString: process.env.POSTGRES_PRISMA_URL })
 const adapter = new PrismaNeon(neon)
 ```
 
-3. If an instance of `PrismaClient` is already attached to the `global` object, export it, otherwise export a new instance, passing the Prisma Neon adapter as the `adapter` option.
+3. If an instance of `PrismaClient` is already attached to the `global` object export it, otherwise export a new instance, passing the Prisma Neon adapter as the `adapter` option.
 
 ```ts
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient }

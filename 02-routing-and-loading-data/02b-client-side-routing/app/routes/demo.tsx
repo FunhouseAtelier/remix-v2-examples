@@ -16,14 +16,14 @@ export default function Demo() {
   }
 
   return (
-    <main className="p-4">
+    <main className="p-4 max-w-[900px]">
       <h1 className="text-3xl">Client-side Routing (demo)</h1>
       <div className="my-4">
         <a className="text-xl text-blue-500 hover:underline" href="/demo">
           Navigate to /demo (server-side routing)
         </a>
       </div>
-      <div className="my-4 max-w-[900px]">
+      <div className="my-4">
         {/* 3. Add the `Link` component to the TSX return value where the link will appear. */}
         <Link className="text-xl text-blue-500 hover:underline" to="/demo">
           Navigate to /demo (client-side routing)

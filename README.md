@@ -164,21 +164,51 @@ _needs to be tested_
 
 ###### 07-01-03a. With Vercel (COMING SOON)
 
-\[package.json build script to migrate and generate client]
+_package.json build script to migrate and generate client_
 
-### 08. User Auth (COMING SOON)
+### 08. User Auth
 
-#### 08-01. With Remix Auth (COMING SOON)
+#### 08-01. With Remix Auth
 
-[GitHub: sergiodxa/remix-auth](https://github.com/sergiodxa/remix-auth)
+_in progress_
+
+##### 08-01-01. Initial Setup
+
+###### 08-01-01a. Installing and Configuring
+
+How to install the `remix-auth` NPM package and create server-only files to enable the authenticator to use a cookie to store session data. Server functions will be created to handle getting the session data, logging in, and logging out. Resource routes will be created to handle incoming requests to log in or log out. The root index route will be configured to conditionally render one of two views, depending on the authentication status of the session.
+
+There is no demo for this example because it will not function untilat least one of the auth strategies below is implemented.
+
+##### 08-01-02. Auth Strategies
+
+###### 08-01-02a. Form Strategy
+
+How to install and implement the Remix Auth Form Strategy, which can use any form data to validate credentials in order to authenticate the session.
+
+The demo shows how to do this with an email and password combination, using hard-coded validation rules for testing success and failure conditions of authentication.
+
+###### 08-01-02b. GitHub Strategy
+
+###### 08-01-02c. OAuth2 Strategy
+
+##### 08-01-03. Conditional Routing
+
+###### 08-01-03a. Based On Authentication
+
+###### 08-01-03b. Based On Authorization
+
+===
+
+08-01-03 conditional routing
+a. login/dashboard redirects
+b. onboarding check
+
+===
 
 #### 08-02. With Clerk (COMING SOON)
 
 [Clerk Docs: Remix Quickstart](https://clerk.com/docs/quickstarts/remix)
-
-#### 08-03. With Auth.js (FUTURE PLAN)
-
-[GitHub: Auth.js Pull Request](https://github.com/nextauthjs/next-auth/pull/6767)
 
 ### Modals (FUTURE PLAN)
 

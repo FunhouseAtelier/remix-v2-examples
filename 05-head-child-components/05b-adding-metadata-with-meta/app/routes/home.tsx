@@ -8,7 +8,7 @@ export const meta: MetaFunction = () => {
 
 export default function Home() {
   return (
-    <main className="p-4">
+    <main className="p-4 max-w-[900px]">
       <h1 className="text-3xl">Welcome to the home page</h1>
       <div className="my-4">
         <Link className="text-xl text-blue-800 hover:underline" to="/demo">
