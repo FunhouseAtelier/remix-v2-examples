@@ -40,29 +40,6 @@ export const getSessionData = async ({
   return { sessionUser, sessionError }
 }
 
-export const login = async ({
-  strategy,
-  request,
-  successRedirect,
-}: {
-  strategy: string
-  request: ActionFunctionArgs['request']
-  successRedirect: string
-}) => {
-  await auth.authenticate(strategy, request, {
-    successRedirect,
-    failureRedirect: '/',
-  })
-}
-
-export const logout = async ({
-  request,
-}: {
-  request: ActionFunctionArgs['request']
-}) => {
-  await auth.logout(request, { redirectTo: '/' })
-}
-
 export interface SessionUser {
   email: string
 }

@@ -81,83 +81,19 @@ export const getSessionData = async ({
 }
 ```
 
-4. Export a function to log the user in, according to the specified strategy, then if successful redirect to the specified route, otherwise redirect to a publicly accessible route.
-
-```ts
-export const login = async ({
-  strategy,
-  request,
-  redirectTo,
-}: {
-  strategy: string
-  request: ActionFunctionArgs['request']
-  redirectTo: string
-}) => {
-  await auth.authenticate(strategy, request)
-  throw redirect(redirectTo)
-}
-```
-
-5. Export a function to log the user out and redirect to a publicly accessible route.
-
-```ts
-export const logout = async ({
-  request,
-  redirectTo,
-}: {
-  request: ActionFunctionArgs['request']
-  redirectTo: string
-}) => {
-  await auth.logout(request, { redirectTo })
-}
-```
-
-### Create `app/routes/auth.login.ts`
-
-1. Import the server function that handles authentication and the Remix `json` utility function.
-
-```ts
-import { login } from '~/services/auth.server'
-import { json } from '@remix-run/node'
-```
-
-2. Export an `action` function that extracts from the URL search params the specified strategy and route to redirect to if authentication is successful, then calls the server function to handle authentication. If either of the search params are invalid, throw a "400 Bad Request" response.
-
-```ts
-export const action = async ({ request }: ActionFunctionArgs) => {
-  const url = new URL(request.url)
-  const { strategy, successRedirect } = Object.fromEntries(url.searchParams)
-
-  if (!strategy || typeof strategy !== 'string') {
-    throw json(null, {
-      status: 400,
-      statusText: `Missing strategy.`,
-    })
-  }
-  if (!successRedirect || typeof successRedirect !== 'string') {
-    throw json(null, {
-      status: 400,
-      statusText: `Missing successRedirect.`,
-    })
-  }
-
-  await login({ strategy, request, successRedirect })
-}
-```
-
 ### Create `app/routes/auth.logout.ts`
 
-1. Import the server function that handles ending the session.
+1. Import the Remix Auth authenticator instance.
 
 ```ts
-import { logout } from '~/services/auth.server'
+import { auth } from '~/services/auth.server'
 ```
 
-2. Export an `action` function that calls the server function to end the session.
+2. Export an `action` function that calls the authenticator `.logout()` method to end the session.
 
 ```ts
 export const action = async ({ request }: ActionFunctionArgs) => {
-  await logout({ request })
+  await auth.logout(request, { redirectTo: '/' })
 }
 ```
 
@@ -230,7 +166,7 @@ const notLoggedInView = !sessionUser && (
 
 ## Expected Behavior
 
-- Remix Auth will be installed and enabled to store session data in a cookie for each user agent that makes a request to your app, and that session can be controlled by importing the `auth` authenticator instance exported from `app/services/auth.server.ts`, however this cannot be done until adding at least one authentication strategy, covered in the following examples.
+- Remix Auth will be installed and enabled to store session data in a cookie for each user agent that makes a request to your app, and that session can be accessed and modified by importing the `auth` authenticator instance exported from `app/services/auth.server.ts`, however it will not work until at least one auth strategy is implemented. This example has no demonstration, it is only a guide to setting up the boilerplate code for basic usage of Remix Auth sessions.
 
 ## Docs References
 

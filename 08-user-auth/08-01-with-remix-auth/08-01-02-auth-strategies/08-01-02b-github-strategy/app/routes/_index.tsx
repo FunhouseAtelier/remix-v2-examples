@@ -36,31 +36,13 @@ export default function Index() {
   const notLoggedInView = !sessionUser && (
     <>
       <h2 className="my-4 text-2xl">Log In Form</h2>
-      {/* 3. Modify the "not logged in" view to include a form that will submit the provided credentials to the `/auth/form/login` route. If there is a session error message that indicates why the last authentication attempt failed, display it below the submit button. */}
-      <Form method="post" action="auth/form/login" className="my-6 block">
-        <div className="my-4">
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            className="my-2 block w-1/2 border-2 border-solid border-teal-500 rounded-lg py-1 px-2"
-          />
-        </div>
-        <div className="my-4">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            className="my-2 block w-1/2 border-2 border-solid border-teal-500 rounded-lg py-1 px-2"
-          />
-        </div>
+      {/* 3. Modify the "not logged in" view to include a form that will navigate to the `/auth/github/login` route. If there is a session error message that indicates why the last authentication attempt failed, display it below the submit button. */}
+      <Form method="post" action="auth/github/login" className="my-6 block">
         <button
           type="submit"
           className="my-4 text-lg py-1 px-2 bg-violet-400 rounded-lg"
         >
-          Log In
+          Log In With GitHub
         </button>
         <div className="h-6">{sessionError?.message ?? null}</div>
       </Form>
@@ -69,7 +51,7 @@ export default function Index() {
 
   return (
     <main className="p-4 max-w-[900px]">
-      <h1 className="my-4 text-3xl">Remix Auth Form Strategy</h1>
+      <h1 className="my-4 text-3xl">Remix Auth GitHub Strategy</h1>
       {sessionUser ? loggedInView : notLoggedInView}
     </main>
   )

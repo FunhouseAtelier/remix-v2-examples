@@ -19,31 +19,6 @@ export const getSessionData = async ({
   return { sessionUser, sessionError }
 }
 
-/* 4. Export a function to log the user in, according to the specified strategy, then if successful redirect to the specified route, otherwise redirect to a publicly accessible route. */
-export const login = async ({
-  strategy,
-  request,
-  successRedirect,
-}: {
-  strategy: string
-  request: ActionFunctionArgs['request']
-  successRedirect: string
-}) => {
-  await auth.authenticate(strategy, request, {
-    successRedirect,
-    failureRedirect: '/',
-  })
-}
-
-/* 5. Export a function to log the user out and redirect to a publicly accessible route. */
-export const logout = async ({
-  request,
-}: {
-  request: ActionFunctionArgs['request']
-}) => {
-  await auth.logout(request, { redirectTo: '/' })
-}
-
 export interface SessionUser {
   email: string
 }

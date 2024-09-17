@@ -1,4 +1,4 @@
-# 08-01b. Remix Auth Form Strategy
+# 08-01-02a. Remix Auth Form Strategy
 
 ## Starting Point
 
@@ -50,6 +50,25 @@ const formStrategy = new FormStrategy(async ({ form }) => {
 auth.use(formStrategy, 'form')
 ```
 
+### Create `app/routes/auth.form.login.ts`
+
+1. Import the Remix Auth authenticator instance.
+
+```ts
+import { auth } from '~/services/auth.server'
+```
+
+2. Export an `action` function that calls the `.authenticate()` method of the authenticator instance.
+
+```ts
+export const action = async ({ request }: ActionFunctionArgs) => {
+  await auth.authenticate('form', request, {
+    successRedirect: '/',
+    failureRedirect: '/',
+  })
+}
+```
+
 ### Edit `app/routes/_index.tsx`
 
 1. Import the Remix `<Form />` component.
@@ -66,10 +85,10 @@ import { Form } from '@remix-run/react'
 </Form>
 ```
 
-3. Modify the "not logged in" view to include a form that will submit the provided credentials to the `/auth/login` route, along with URL search parameters to indicate that the form strategy is being used and if authentication is successful then redirect to the `/` root route. If there is a session error message that indicates why the last authentication attempt failed, display it below the submit button.
+3. Modify the "not logged in" view to include a form that will submit the provided credentials to the `/auth/form/login` route. If there is a session error message that indicates why the last authentication attempt failed, display it below the submit button.
 
 ```tsx
-<Form method="post" action="auth/login?strategy=form&successRedirect=/">
+<Form method="post" action="auth/form/login">
   <div>
     <label htmlFor="email">Email Address</label>
     <input type="email" name="email" id="email" />
@@ -85,7 +104,7 @@ import { Form } from '@remix-run/react'
 
 ## Notes
 
-- Multiple different form strategies can be used in the same Remix app. Just repeat step 3 in **Edit `app/services/auth.server.ts`** with a different instantiation of the `FormStrategy` class with its own validation logic and give it a unique name in place of `'form'`.
+- Multiple different form strategies can be used in the same Remix app if you give them all unique names in place of `'form'`.
 
 ## Expected Behavior
 
