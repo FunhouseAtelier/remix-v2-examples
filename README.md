@@ -190,19 +190,27 @@ The demo shows how to do this with an email and password combination, using hard
 
 ###### 08-01-02b. GitHub Strategy
 
-###### 08-01-02c. OAuth2 Strategy
+How to install and implement the Remix Auth GitHub Strategy, which can use any form data to validate credentials in order to authenticate the session.
+
+The demo shows how to do this with GitHub as the identity provider.
+
+###### 08-01-02c. Discord Strategy
+
+How to install and implement the Remix Auth Discord Strategy, which can use any form data to validate credentials in order to authenticate the session.
+
+The demo shows how to do this with Discord as the identity provider.
 
 ##### 08-01-03. Conditional Routing
 
 ###### 08-01-03a. Based On Authentication
 
+How to check for authentication status and redirect to another route based on that status.
+
+The demo shows how this can be done with a `/login` route and a `/dashboard` route, where the `/login` route is only accessible when you are not authenticated and the `/dashboard` route is only accessible when you are authenticated.
+
 ###### 08-01-03b. Based On Authorization
 
-===
-
-08-01-03 conditional routing
-a. login/dashboard redirects
-b. onboarding check
+_onboarding check_
 
 ===
 

@@ -88,7 +88,7 @@ import { Form } from '@remix-run/react'
 3. Modify the "not logged in" view to include a form that will submit the provided credentials to the `/auth/form/login` route. If there is a session error message that indicates why the last authentication attempt failed, display it below the submit button.
 
 ```tsx
-<Form method="post" action="auth/form/login">
+<Form method="post" action="/auth/form/login">
   <div>
     <label htmlFor="email">Email Address</label>
     <input type="email" name="email" id="email" />

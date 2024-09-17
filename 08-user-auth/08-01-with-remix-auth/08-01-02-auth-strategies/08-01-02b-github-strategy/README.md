@@ -108,7 +108,7 @@ import { Form } from '@remix-run/react'
 3. Modify the "not logged in" view to include a form that will navigate to the `/auth/github/login` route. If there is a session error message that indicates why the last authentication attempt failed, display it below the submit button.
 
 ```tsx
-<Form method="post" action="auth/github/login">
+<Form method="post" action="/auth/github/login">
   <button type="submit">Log In With GitHub</button>
   <div>{sessionError?.message ?? null}</div>
 </Form>

@@ -37,7 +37,7 @@ export default function Index() {
     <>
       <h2 className="my-4 text-2xl">You are not logged in</h2>
       {/* 3. Modify the "not logged in" view to include a form that will navigate to the `/auth/discord/login` route. If there is a session error message that indicates why the last authentication attempt failed, display it below the submit button. */}
-      <Form method="post" action="auth/discord/login" className="my-6 block">
+      <Form method="post" action="/auth/discord/login" className="my-6 block">
         <button
           type="submit"
           className="my-4 text-lg py-1 px-2 bg-violet-400 rounded-lg"
@@ -51,7 +51,7 @@ export default function Index() {
 
   return (
     <main className="p-4 max-w-[900px]">
-      <h1 className="my-4 text-3xl">Remix Auth OAuth2 Strategy</h1>
+      <h1 className="my-4 text-3xl">Remix Auth Discord Strategy</h1>
       {sessionUser ? loggedInView : notLoggedInView}
     </main>
   )

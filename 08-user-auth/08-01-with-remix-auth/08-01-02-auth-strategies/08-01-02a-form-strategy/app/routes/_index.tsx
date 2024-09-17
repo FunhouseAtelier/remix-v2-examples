@@ -37,7 +37,7 @@ export default function Index() {
     <>
       <h2 className="my-4 text-2xl">Log In Form</h2>
       {/* 3. Modify the "not logged in" view to include a form that will submit the provided credentials to the `/auth/form/login` route. If there is a session error message that indicates why the last authentication attempt failed, display it below the submit button. */}
-      <Form method="post" action="auth/form/login" className="my-6 block">
+      <Form method="post" action="/auth/form/login" className="my-6 block">
         <div className="my-4">
           <label htmlFor="email">Email Address</label>
           <input

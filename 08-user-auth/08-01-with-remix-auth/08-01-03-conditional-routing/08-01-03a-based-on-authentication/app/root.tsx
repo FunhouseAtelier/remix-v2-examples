@@ -1,5 +1,4 @@
-import type { MetaFunction } from '@remix-run/node'
-
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node'
 import {
   Links,
   Meta,
@@ -10,7 +9,7 @@ import {
 import './tailwind.css'
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'Remix Auth Discord Strategy' }]
+  return [{ title: 'Conditional Routing Based on Authentication' }]
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
