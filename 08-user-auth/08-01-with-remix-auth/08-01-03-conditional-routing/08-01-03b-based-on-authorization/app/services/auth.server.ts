@@ -2,9 +2,10 @@ import type { LoaderFunctionArgs } from '@remix-run/node'
 import { Authenticator, AuthorizationError } from 'remix-auth'
 import { sessionStorage, getSession } from '~/services/session.server'
 import { FormStrategy } from 'remix-auth-form'
-
-/* 1. Import the Remix `redirect` utility function. */
 import { redirect } from '@remix-run/node'
+
+/* 1. Import the Remix `json` utility function. */
+import { json } from '@remix-run/node'
 
 export const auth = new Authenticator<SessionUser>(sessionStorage)
 
@@ -38,7 +39,6 @@ export const getSessionData = async ({
   return { sessionUser, sessionError }
 }
 
-/* 2. Export a function that checks authentication status and redirects to a route if that status does not meet the requirement, otherwise it returns the session data. */
 export const requireAuthentication = async ({
   request,
   isReverseLogic,
@@ -52,6 +52,28 @@ export const requireAuthentication = async ({
   }
   if (sessionUser && isReverseLogic) {
     throw redirect('/dashboard')
+  }
+  return { sessionUser, sessionError }
+}
+
+/* 2. Export a function that checks the user's roles and throws a "403 Forbidden" response is the user does not have the necessary role. */
+export const requireAuthorization = async ({
+  request,
+  role,
+}: {
+  request: LoaderFunctionArgs['request']
+  role: string
+}) => {
+  const { sessionUser, sessionError } = await getSessionData({ request })
+  const roles = []
+  if (sessionUser?.email === 'admin@example.com') {
+    roles.push('admin')
+  }
+  if (!roles.includes(role)) {
+    throw json(null, {
+      status: 403,
+      statusText: 'You are not permitted to view this content',
+    })
   }
   return { sessionUser, sessionError }
 }

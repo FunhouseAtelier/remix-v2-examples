@@ -8,7 +8,13 @@
 
 ### Edit `app/services/auth.server.ts`
 
-1. Export a function that checks authentication status and redirects to a route if that status does not meet the requirement, otherwise it returns the session data.
+1. Import the Remix `redirect` utility function.
+
+```ts
+import { redirect } from '@remix-run/node'
+```
+
+2. Export a function that checks authentication status and redirects to a route if that status does not meet the requirement, otherwise it returns the session data.
 
 ```ts
 export const requireAuthentication = async ({

@@ -210,9 +210,9 @@ The demo shows how this can be done with a `/login` route and a `/dashboard` rou
 
 ###### 08-01-03b. Based On Authorization
 
-_onboarding check_
+How to check for authorizations status and prevent access to a route for users who are not authorized.
 
-===
+The demo shows how this can be done with a `/admin-only` route a hard-coded `'admin'` role that can be simulated with only one email address.
 
 #### 08-02. With Clerk (COMING SOON)
 
