@@ -32,7 +32,6 @@ const timeoutRef = useRef<NodeJS.Timeout>()
 ```tsx
 const handleChange = (event: React.FormEvent<HTMLFormElement>) => {
   clearTimeout(timeoutRef.current)
-  const isFirstSearch = q === ''
   timeoutRef.current = setTimeout(submit.bind(null, event.currentTarget), 500)
 }
 ```

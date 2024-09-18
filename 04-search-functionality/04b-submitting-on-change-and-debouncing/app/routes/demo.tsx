@@ -35,7 +35,6 @@ export default function Demo() {
   /* 4. Add a function to handle submission of the form any time the form data changes and perform debouncing so that the submissions only happen if there has been no change in the last half-second, indicating that the user has finished typing. */
   const handleChange = (event: React.FormEvent<HTMLFormElement>) => {
     clearTimeout(timeoutRef.current)
-    const isFirstSearch = q === ''
     timeoutRef.current = setTimeout(submit.bind(null, event.currentTarget), 500)
   }
   /* 5. Add a React effect that watches for changes to the debouncing timeout ID tracker and returns a clean-up function to clear the current timeout, in order to prevent memory leaks. */
