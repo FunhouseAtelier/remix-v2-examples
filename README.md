@@ -12,7 +12,7 @@ The examples in **01. Installing and Running Remix** are based on [the official 
 
 The examples in this repository all follow a common pattern, with the following principles in mind:
 
-- Document a step-by-step process to implement each technique of Remix or optional web technology integration. The step-by-step instructions are found in the `README.md` file inside each example project root folder, and they are generally outlines by the pathname of the file to be created or edited.
+- Document a step-by-step process to implement each technique of Remix or optional web technology integration. The step-by-step instructions are found in the `README.md` file inside each example project root folder, and they are generally outlined by the pathname of the file to be created or edited.
 
 - Show the complete result of following all steps in the example project code, and include comments in the files to call out where each step can be found in the code, to make it clear how to replicate each technique in another Remix project.
 
@@ -164,13 +164,11 @@ _needs to be tested_
 
 ###### 07-01-03a. With Vercel (COMING SOON)
 
-_package.json build script to migrate and generate client_
+_package.json build script to migrate and generate the Prisma Client_
 
 ### 08. User Auth
 
 #### 08-01. With Remix Auth
-
-_in progress_
 
 ##### 08-01-01. Initial Setup
 
@@ -178,7 +176,7 @@ _in progress_
 
 How to install the `remix-auth` NPM package and create server-only files to enable the authenticator to use a cookie to store session data. Server functions will be created to handle getting the session data, logging in, and logging out. Resource routes will be created to handle incoming requests to log in or log out. The root index route will be configured to conditionally render one of two views, depending on the authentication status of the session.
 
-There is no demo for this example because it will not function untilat least one of the auth strategies below is implemented.
+There is no demo for this example because it will not function until at least one of the auth strategies below is implemented.
 
 ##### 08-01-02. Auth Strategies
 
@@ -190,13 +188,13 @@ The demo shows how to do this with an email and password combination, using hard
 
 ###### 08-01-02b. GitHub Strategy
 
-How to install and implement the Remix Auth GitHub Strategy, which can use any form data to validate credentials in order to authenticate the session.
+How to install and implement the Remix Auth GitHub Strategy.
 
 The demo shows how to do this with GitHub as the identity provider.
 
 ###### 08-01-02c. Discord Strategy
 
-How to install and implement the Remix Auth Discord Strategy, which can use any form data to validate credentials in order to authenticate the session.
+How to install and implement the Remix Auth Discord Strategy.
 
 The demo shows how to do this with Discord as the identity provider.
 
