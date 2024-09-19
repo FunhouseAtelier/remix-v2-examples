@@ -47,10 +47,10 @@ import {
 5. Add the `<SignedOut>` component to wrap content that will be rendered only if the user is not authenticated.
 
 ```tsx
-<SignedIn>
+<SignedOut>
   <h2>You are not signed in</h2>
   {/* other content */}
-</SignedIn>
+</SignedOut>
 ```
 
 6. Add the `<SignInButton>` component to render or wrap a button that will display the Clerk sign in form when clicked.
