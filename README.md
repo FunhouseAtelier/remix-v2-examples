@@ -214,7 +214,7 @@ The demo shows how this can be done with an `/admin-only` route and a hard-coded
 
 #### 08-02. With Clerk (COMING SOON)
 
-//
+_in progress_
 
 ### Modals (FUTURE PLAN)
 
