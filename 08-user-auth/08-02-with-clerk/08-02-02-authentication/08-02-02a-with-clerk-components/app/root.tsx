@@ -9,15 +9,13 @@ import {
 } from '@remix-run/react'
 import './tailwind.css'
 
-/* 1. Import the Clerk `rootAuthLoader` function and `ClerkApp` wrapper. */
 import { rootAuthLoader } from '@clerk/remix/ssr.server'
 import { ClerkApp } from '@clerk/remix'
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'Installing and Configuring Clerk' }]
+  return [{ title: 'Authentication With Clerk Components' }]
 }
 
-/* 2. Export a `loader` function that passes its arguments to the `rootAuthLoader` function. */
 export const loader: LoaderFunction = (args) => rootAuthLoader(args)
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -38,7 +36,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
   )
 }
 
-/* 3. Instead of exporting the `App` function as the default, use the `ClerkApp` wrapper, which is passed the `App` function as an argument. */
 function App() {
   return <Outlet />
 }

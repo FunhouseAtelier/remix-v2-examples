@@ -52,8 +52,6 @@ export default ClerkApp(App)
 
 ## Notes
 
-- The Clerk examples to follow will use the email address with password and Google auth strategies.
-
 - Make sure to place your environment variables in a `.env` file. Do not put them in the `.env.example` file.
 
 - If there is other logic you want to run in the root loader function, or other data you want that loader function to return, it can be passed in a function that is the second argument when calling `rootAuthLoader`. See the **Clerk Docs: Remix Quickstart: Configure rootAuthLoader** reference below for the official example of how to do it.
